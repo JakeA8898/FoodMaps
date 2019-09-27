@@ -71,6 +71,7 @@ h2{
 }
 .center{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -84,4 +85,51 @@ h2{
     font-size: 2em;
     color: black;
     text-decoration: none;
+}
+
+.rating{
+    position: relative;
+    transform: rotateY(180deg);
+    display: flex;
+}
+
+.rating input{
+    display: none;
+}
+
+.rating label{
+    display: block;
+    cursor: pointer;
+    width: 50px;
+    background: yellow;
+
+}
+
+.rating label:before{
+    content: '\f005';
+    font-family: fontAwesome;
+    position: relative;
+    display: block;
+    font-size: 2rem;
+    color: #101010;
+
+}
+
+.rating label:after{
+    content: '\f005';
+    font-family: fontAwesome;
+    position: relative;
+    display: block;
+    font-size: 2rem;
+    color: #1f9cff;
+    bottom: 2rem;
+    opacity: 0;
+    
+    
+
+}
+.rating label:hover:after,
+.rating label:hover ~ label:after,
+.rating input:checked ~ label:after{
+    opacity: 1;
 }
