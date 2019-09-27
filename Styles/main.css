@@ -100,8 +100,9 @@ h2{
 .rating label{
     display: block;
     cursor: pointer;
-    width: 50px;
+    width: 2rem;
     background: yellow;
+    
 
 }
 
