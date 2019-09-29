@@ -20,23 +20,46 @@
         </div>
         <div class="content">
             <div class="selectors">
-                <div class="cost center option">
-                    <h2>Cost</h2>
+                <div class="center option">
+                    <div class="description">
+                        <h2>Show me restraunts that cost at most:</h2>
+                    </div>
+
+                    <div class="radioSelector cost">
+                        <input type="radio" name="costs" id=cost4><label for="cost4"></label>
+                        <input type="radio" name="costs" id=cost3><label for="cost3"></label>
+                        <input type="radio" name="costs" id=cost2><label for="cost2"></label>
+                        <input type="radio" name="costs" id=cost1><label for="cost1"></label>
+                    </div>
 
                 </div>
-                <div class="location center option">
-                    <h2>location</h2>
+                <div class="center option">
+                    <div class="description">
+                        <h2>Show me restraunts in this location:</h2>
+                    </div>
+                    <div class=location>
+                        <input type="text" id="search" class="input" placeholder="Enter postal code or city">
+                        <button id="locate" class="input"></button>
+                    </div>
 
                 </div>
                 <div class="type center option">
-                    <h2>type</h2>
+                    <div class="description">
+                        <h2>I want to eat:</h2>
+                        <span>(Fast food, Sit Down, Italian..)</span>
+                        
+                    </div>
+
+                    <div class="type">
+                        <input type="text" id="restrauntType" class="input" placeholder="">
+                    </div>
 
                 </div>
                 <div class="center option">
                     <div class="description">
                         <h2>Show me restraunts with a rating above or equal to:</h2>
                     </div>
-                    <div class="rating">
+                    <div class="radioSelector raiting">
                         <input type="radio" name="stars" id=star5><label for="star5"></label>
                         <input type="radio" name="stars" id=star4><label for="star4"></label>
                         <input type="radio" name="stars" id=star3><label for="star3"></label>

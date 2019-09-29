@@ -81,23 +81,53 @@ h2{
     height: 20vh;
 }
 
+h2{
+    margin: 0.3em;
+}
+
+.description{
+    display: flex;
+    flex-direction: column;
+    margin: 0.3em;
+}
+
 .link{
     font-size: 2em;
     color: black;
     text-decoration: none;
 }
 
-.rating{
-    position: relative;
-    transform: rotateY(180deg);
-    display: flex;
+.input{
+    border: 3px solid #fcad26;
+
+	background-color: white;
+	text-align: center;
+	text-decoration: none;
+	font-weight: bold;
+	display: inline-block;
+	font-size: 1rem;
+    
 }
 
-.rating input{
+#locate:after{
+    color: #fcad26;
+    content: '\f124';
+    font-family: FontAwesome;
+}
+
+
+
+.radioSelector{
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.radioSelector input{
     display: none;
 }
 
-.rating label{
+.radioSelector label{
     display: block;
     cursor: pointer;
     width: 2rem;
@@ -106,8 +136,7 @@ h2{
 
 }
 
-.rating label:before{
-    content: '\f005';
+.radioSelector label:before{
     font-family: fontAwesome;
     position: relative;
     display: block;
@@ -116,8 +145,7 @@ h2{
 
 }
 
-.rating label:after{
-    content: '\f005';
+.radioSelector label:after{
     font-family: fontAwesome;
     position: relative;
     display: block;
@@ -129,8 +157,25 @@ h2{
     
 
 }
-.rating label:hover:after,
-.rating label:hover ~ label:after,
-.rating input:checked ~ label:after{
+.radioSelector label:hover:after,
+.radioSelector label:hover ~ label:after,
+.radioSelector input:checked ~ label:after{
     opacity: 1;
 }
+
+.raiting label:before{
+    content: '\f005';
+}
+
+.raiting label:after{
+    content: '\f005';
+}
+
+.cost label:before{
+    content: '\f155';
+}
+
+.cost label:after{
+    content: '\f155';
+}
+
