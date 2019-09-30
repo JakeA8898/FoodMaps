@@ -4,6 +4,13 @@
     font-size: 1em;
 }
 
+.results{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
 body{
     margin: 0;
 }
@@ -197,3 +204,23 @@ h2{
     padding: 0.4rem;
 }
 
+.sidebar{
+    background-color: blue;
+    width: 20vw;
+    height: 100vh;
+}
+
+.position{
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.resultPage{
+    display:flex;
+    flex-direction: column;
+    background-color: greenyellow;
+    width: 80vw;
+    height: 100vh;
+}
