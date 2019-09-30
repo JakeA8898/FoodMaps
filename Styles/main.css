@@ -30,8 +30,8 @@ h2{
     background: orange;
     justify-content: space-between;
     align-items: center;
-    position: -webkit-sticky;
-    position: sticky;
+    /* position: -webkit-sticky;
+    position: sticky; */
     top: 0;
     height: 10vh;
     min-height: 5em;
@@ -57,6 +57,39 @@ h2{
     background: blue;
     height: 90vh;
     min-height: 10em;
+}
+
+.overlay{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: hand;
+    right: 0;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.overlay:target{
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup{
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
+    position: absolute;
+}
+
+.popup .close{
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
 }
 
 .selectors{
@@ -132,6 +165,7 @@ h2{
     position: relative;
     display: flex;
     flex-direction: row-reverse;
+    
 }
 
 .radioSelector input{
@@ -194,9 +228,6 @@ h2{
     padding-top: 2rem;
 }
 
-.sizeUp{
-    font-size: 3rem;
-}
 
 #search{
     border-radius: 3rem;
@@ -204,6 +235,7 @@ h2{
     padding: 0.4rem;
 }
 
+<<<<<<< HEAD
 .sidebar{
     background-color: blue;
     width: 20vw;
@@ -224,3 +256,11 @@ h2{
     width: 80vw;
     height: 100vh;
 }
+=======
+#knownSearch{
+    font-size:1vw;
+    width: 2vw;
+    height:auto;
+}
+
+>>>>>>> ea0e9c5a002fbaeae9e7af8b3c026e0c16523816
