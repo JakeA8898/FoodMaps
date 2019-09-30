@@ -61,7 +61,12 @@ h2{
     background: yellow;
     width: 100%;
     height: auto;
-    margin-top: 5rem
+}
+
+.instruction{
+    background-color:magenta;
+    font-size: 2rem;
+    margin-top: 2rem;
 }
 
 .search{
@@ -99,7 +104,6 @@ h2{
 
 .input{
     border: 3px solid #fcad26;
-
 	background-color: white;
 	text-align: center;
 	text-decoration: none;
@@ -177,5 +181,19 @@ h2{
 
 .cost label:after{
     content: '\f155';
+}
+
+.spacing{
+    padding-top: 2rem;
+}
+
+.sizeUp{
+    font-size: 3rem;
+}
+
+#search{
+    border-radius: 3rem;
+    font-size: 2rem;
+    padding: 0.4rem;
 }
 

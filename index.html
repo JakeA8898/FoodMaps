@@ -19,6 +19,7 @@
             
         </div>
         <div class="content">
+            <span class="instruction">Don't know what to eat? Use the options below to find somewhere</span>
             <div class="selectors">
                 <div class="center option">
                     <div class="description">
@@ -38,7 +39,7 @@
                         <h2>Show me restraunts in this location:</h2>
                     </div>
                     <div class=location>
-                        <input type="text" id="search" class="input" placeholder="Enter postal code or city">
+                        <input type="text" id="locateText" class="input" placeholder="Enter postal code or city">
                         <button id="locate" class="input"></button>
                     </div>
 
@@ -71,9 +72,20 @@
             </div>
             <div class="search center">
                 <div class="searchBar">
-                    <h2>Search</h2>
+                    <a href="" id="search" class="link input">Click to find food</a>
                 </div>
                 
+            </div>
+
+            <div class="spacing center">
+                <div class="instruction">
+                    <span>Know where you want to eat? Search for it below</span>
+                </div>
+                <div class=" spacing searchBar">
+                    <input type="text" id="knownSearch" class="input sizeUp" placeholder="Enter where you want to eat">
+                    <button id="buttonSearch" class="input sizeUp">Find food</button>
+                </div>
+
             </div>
         </div>
 
