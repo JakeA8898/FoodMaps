@@ -251,7 +251,7 @@ h2{
 .resultPage{
     display:flex;
     flex-direction: column;
-    background-color: greenyellow;
+    background-color: yellow;
     width: 80vw;
     height: 100vh;
 }
@@ -261,3 +261,9 @@ h2{
     height:auto;
 }
 
+.result{
+    background-color: white;
+    border: 3px solid black;
+    width: 80vw;
+    height: 15rem;
+}
