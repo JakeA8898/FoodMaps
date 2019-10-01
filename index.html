@@ -5,31 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="Styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Squada+One&display=swap" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <title>FoodMaps</title>
 </head>
 <body>
     <div class="main">
-        <div class="head">
-            <a href="index.html" class="link">FoodMaps</a>
+        <div class="head black">
+            <a href="index.html" class="link headL"><span class="white">FoodMaps</span></a>
             <div class="headerEnd">
-                <a href="#login" class="link">Login</a>
-                <a href="" class="link">Register</a>
+                <a href="#login" class="link headL"><span class="white">Login</span></a>
+                <a href="" class="link headL"><span class="white">Register</span></a>
             </div>
             <div id="login" class="overlay">
                 <div class="popup">
-                    <span>testing</span>
+                    <span class=title>Login</span>
                     <a class="close" href="#">&times;</a>
+                    <div class="information">
+                        <input type="text" id="usernameL" class="popupText" placeholder="Enter Username">
+                        <input type="text" id="passwordL" class="popupText" placeholder="Enter Password">
+                        <button id="loginSubmit">Login</button>
+                    </div>
                 </div>
+                
             </div>
             
         </div>
-        <div class="content">
-            <span class="instruction">Don't know what to eat? Use the options below to find somewhere</span>
+        <div class="content off-black">
+            <span class="instruction white">Don't know what to eat? Use the options below to find somewhere</span>
             <div class="selectors">
                 <div class="center option">
                     <div class="description">
-                        <h2>Show me restraunts that cost at most:</h2>
+                        <span class="instruction white">Show me restraunts that cost at most:</span>
                     </div>
 
                     <div class="radioSelector cost">
@@ -42,29 +49,29 @@
                 </div>
                 <div class="center option">
                     <div class="description">
-                        <h2>Show me restraunts in this location:</h2>
+                        <span class="instruction white">Show me restraunts in this location:</span>
                     </div>
                     <div class=location>
-                        <input type="text" id="locateText" class="input" placeholder="Enter postal code or city">
+                        <input type="text" id="locateText" class="input text" placeholder="Enter postal code or city">
                         <button id="locate" class="input"></button>
                     </div>
 
                 </div>
                 <div class="type center option">
                     <div class="description">
-                        <h2>I want to eat:</h2>
-                        <span>(Fast food, Sit Down, Italian..)</span>
+                        <span class="instruction white">I want to eat:</span>
+                        <span class="instruction white">(Fast food, Sit Down, Italian..)</span>
                         
                     </div>
 
                     <div class="type">
-                        <input type="text" id="restrauntType" class="input" placeholder="">
+                        <input type="text" id="restrauntType" class="input text" placeholder="">
                     </div>
 
                 </div>
                 <div class="center option">
                     <div class="description">
-                        <h2>Show me restraunts with a rating above or equal to:</h2>
+                        <span class="instruction white">Show me restraunts with a rating above or equal to:</span>
                     </div>
                     <div class="radioSelector raiting">
                         <input type="radio" name="stars" id=star5><label for="star5"></label>
@@ -84,11 +91,11 @@
             </div>
 
             <div class="spacing center">
-                <div class="instruction">
+        <div class="instruction white">
                     <span>Know where you want to eat? Search for it below</span>
                 </div>
-                <div class=" spacing searchBar">
-                    <input type="text" id="knownSearch" class="input" placeholder="Enter where you want to eat">
+                <div class="spacing searchBar">
+                    <input type="text" id="knownSearch" class="input text" placeholder="Enter where you want to eat">
                     <button id="buttonSearch" class="input">Find food</button>
                 </div>
 
