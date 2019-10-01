@@ -63,7 +63,7 @@ h2{
     position: fixed;
     top: 0;
     bottom: 0;
-    left: hand;
+    left: 0;
     right: 0;
     visibility: hidden;
     opacity: 0;
@@ -81,6 +81,7 @@ h2{
     border-radius: 5px;
     width: 30%;
     position: absolute;
+    top: 0;
 }
 
 .popup .close{
@@ -257,7 +258,7 @@ h2{
 }
 #knownSearch{
     font-size:1vw;
-    width: 2vw;
+    width: auto;
     height:auto;
 }
 
