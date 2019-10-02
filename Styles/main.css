@@ -251,7 +251,6 @@ h2{
 .resultPage{
     display:flex;
     flex-direction: column;
-    background-color: yellow;
     width: 80vw;
     height: 100vh;
 }
@@ -262,8 +261,38 @@ h2{
 }
 
 .result{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
     background-color: white;
     border: 3px solid black;
     width: 80vw;
-    height: 15rem;
+    height: 25vh;
+}
+
+.resultPicture{
+    flex-grow: 0;
+    height: auto;
+    width: auto;
+}
+
+.infoBox{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.flex-grid-thirds {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.flex-grid-thirds .col {
+    width: 100%;
+    height:auto ;
+    font-size:2vw;
+    background: salmon;
+    flex: 1;
 }
