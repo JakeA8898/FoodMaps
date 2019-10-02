@@ -13,6 +13,7 @@
 
 body{
     margin: 0;
+    font-family: 'Squada One', cursive;
 }
 
 h1{
@@ -27,17 +28,28 @@ h2{
 
     display: flex;
     flex-direction: row;
-    background: orange;
+    
     justify-content: space-between;
     align-items: center;
-    /* position: -webkit-sticky;
-    position: sticky; */
     top: 0;
     height: 10vh;
     min-height: 5em;
     padding-left: 5vw;
     padding-right: 5vw;
     
+}
+
+.black{
+    background: rgb(26, 25, 25);
+}
+
+.off-black{
+    background: rgb(29, 29, 29);
+
+}
+
+.white{
+    color: azure;
 }
 
 .headerEnd{
@@ -54,16 +66,16 @@ h2{
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    background: blue;
     height: 90vh;
     min-height: 10em;
 }
 
 .overlay{
+    
     position: fixed;
     top: 0;
     bottom: 0;
-    left: hand;
+    left: 0;
     right: 0;
     visibility: hidden;
     opacity: 0;
@@ -79,17 +91,40 @@ h2{
     padding: 20px;
     background: #fff;
     border-radius: 5px;
-    width: 30%;
-    position: absolute;
+    width: 20vw;;
+    position: relative;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .popup .close{
     position: absolute;
-    top: 20px;
+    top: 1vh;
     right: 30px;
     font-size: 30px;
     font-weight: bold;
     color: #333;
+}
+
+.title{
+    font-size: 2em;
+    padding-top: 1vh;
+    padding-bottom: 2vh;
+    font-weight: bold;
+}
+
+.information{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.popupText{
+    margin-bottom: 1em;
 }
 
 .selectors{
@@ -98,20 +133,20 @@ h2{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background: yellow;
+
     width: 100%;
     height: auto;
 }
 
 .instruction{
-    background-color:magenta;
-    font-size: 2rem;
+    
+    font-size: 2vw;
     margin-top: 2rem;
 }
 
 .search{
     
-    background: greenyellow;
+
     width: 100%;
 }
 .center{
@@ -176,7 +211,7 @@ h2{
     display: block;
     cursor: pointer;
     width: 2rem;
-    background: yellow;
+    
     
 
 }
@@ -235,7 +270,6 @@ h2{
     padding: 0.4rem;
 }
 
-<<<<<<< HEAD
 .sidebar{
     background-color: blue;
     width: 20vw;
@@ -256,11 +290,14 @@ h2{
     width: 80vw;
     height: 100vh;
 }
-=======
 #knownSearch{
-    font-size:1vw;
-    width: 2vw;
+    font-size:1em;
+    width: 25vw;
     height:auto;
 }
 
->>>>>>> ea0e9c5a002fbaeae9e7af8b3c026e0c16523816
+.text{
+    width: 25vw;
+    font-size: 1em;
+}
+
