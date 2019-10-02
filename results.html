@@ -6,24 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="Styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Squada+One&display=swap" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <title>Search Results</title>
 </head>
 
 <body>
     <div class="main">
-        <div class="head">
-            <a href="index.html" class="link">FoodMaps</a>
+        <div class="head black">
+            <a href="index.html" class="link"><span class="white headL">FoodMaps</span></a>
             <div class="headerEnd">
-                <a href="" class="link">Login</a>
-                <a href="" class="link">Register</a>
+                <a href="" class="link"><span class="white headL">Login</span></a>
+                <a href="" class="link"><span class="white headL">Register</span></a>
             </div>
+            <!-- <div>
+                LOGIN POPUP
+            </div> -->
         </div>
 
-        <div class="results">
+        <div class="results off-black">
             <div class="sidebar">
                 <div class="position">
-                    <span>Maximum budget:</span>
+                    <span class="white">Maximum budget:</span>
                 </div>
                 <div class="radioSelector cost position">
                     <input type="radio" name="costs" id=cost4><label for="cost4"></label>
@@ -32,20 +36,20 @@
                     <input type="radio" name="costs" id=cost1><label for="cost1"></label>
                 </div>
                 <div class="description position">
-                    <span>Location:</span>
+                    <span class="white">Location:</span>
                 </div>
                 <div class="location position">
-                    <input type="text" id="locateText" class="input" placeholder="Enter postal code or city">
+                    <input type="text" id="locateText" class="input text" placeholder="Enter postal code or city">
                     <button id="locate" class="input"></button>
                 </div>
                 <div class="description position">
-                    <span>Restaurant type:</span>
+                    <span class="white">Restaurant type:</span>
                 </div>
                 <div class="type position">
-                    <input type="text" id="restrauntType" class="input" placeholder="">
+                    <input type="text" id="restrauntType" class="input text" placeholder="">
                 </div>
                 <div class="description position">
-                    <span>Minimum rating:</span>
+                    <span class="white">Minimum rating:</span>
                 </div>
                 <div class="radioSelector raiting position">
                     <input type="radio" name="stars" id=star5><label for="star5"></label>
@@ -58,10 +62,10 @@
                     <a href="" id="search" class="link input">Click to find food</a>
                 </div>
                 <div class="description position">
-                    <span>(Alternatively) Search by name:</span>
+                    <span class="white">(Alternatively) Search by name:</span>
                 </div>
-                <div class=" spacing searchBar position">
-                    <input type="text" id="knownSearch" class="input" placeholder="Enter where you want to eat">
+                <div class=" spacing position searchBar">
+                    <input type="text" id="knownSearch" class="input text " placeholder="Enter where you want to eat">
                     <button id="buttonSearch" class="input">Find food</button>
                 </div>
             </div>
@@ -87,6 +91,10 @@
                                 <span>Phone: (905) 574-7880</span>
                             </div>
                         </div>
+                    </div>
+                    <div class="resultPicture">
+                        <img src="media/Keg_dining_room.jpg" alt="The Keg Dining Room"
+                            style="float:right;width:300px;height:180px;">
                     </div>
                     <div class="resultPicture">
                         <img src="media/Keg_dining_room.jpg" alt="The Keg Dining Room"
@@ -118,6 +126,10 @@
                         <img src="media/Spring_dining_room.jpg" alt="The Spring Sushi Dining Room"
                             style="float:right;width:300px;height:180px;">
                     </div>
+                    <div class="resultPicture">
+                        <img src="media/Keg_dining_room.jpg" alt="The Keg Dining Room"
+                            style="float:right;width:300px;height:180px;">
+                    </div>
                 </div>
 
                 <div class="result">
@@ -144,6 +156,10 @@
                         <img src="media/Turtle_dining_room.jpg" alt="The Turtle Jacks Room"
                             style="float:right;width:300px;height:180px;">
                     </div>
+                    <div class="resultPicture">
+                        <img src="media/Keg_dining_room.jpg" alt="The Keg Dining Room"
+                            style="float:right;width:300px;height:180px;">
+                    </div>
                 </div>
 
                 <div class="result">
@@ -168,6 +184,10 @@
                     </div>
                     <div class="resultPicture">
                         <img src="media/Grill_dining_room.jpg" alt="The Spring Grill Dining Room"
+                            style="float:right;width:300px;height:180px;">
+                    </div>
+                    <div class="resultPicture">
+                        <img src="media/Keg_dining_room.jpg" alt="The Keg Dining Room"
                             style="float:right;width:300px;height:180px;">
                     </div>
                 </div>
