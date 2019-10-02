@@ -236,7 +236,7 @@ h2{
 }
 
 .sidebar{
-    background-color: blue;
+    background-color: lightsteelblue;
     width: 20vw;
     height: 100vh;
 }
@@ -265,7 +265,7 @@ h2{
     flex-direction: row;
     justify-content: flex-end;
     background-color: white;
-    border: 3px solid black;
+    border: 2px solid black;
     width: 80vw;
     height: 25vh;
 }
@@ -293,6 +293,6 @@ h2{
     width: 100%;
     height:auto ;
     font-size:2vw;
-    background: salmon;
+    background: lightgray;
     flex: 1;
 }
