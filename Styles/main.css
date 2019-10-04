@@ -301,6 +301,8 @@ h2{
 }
 
 
+
+
 .result{
     display: flex;
     flex-direction: row;
@@ -370,6 +372,7 @@ h2{
         background-color: rgb(35, 47, 63);
         margin-bottom: 10vh;
         width: 100%;
+        height: auto;
     }
     
     .head{
@@ -401,6 +404,10 @@ h2{
         margin-bottom: 10%;
     }
 
+    .sidebar{
+        display: none;
+    }
+
     #search{
         height: auto;
     }
@@ -409,10 +416,10 @@ h2{
         text-align: center;
     }
 
-    .sidebar{
+    .results{
+        flex-direction: column;
         
-        height: auto;
-        width: 100%;
+        height: 90vh;
     }
 
 
@@ -422,15 +429,14 @@ h2{
 
     .resultPage{
         width: 100%;
+        height: 90vh;
     }
     .result{
         width: 100%;
         height: 20%;
     }
 
-    .results{
-        flex-direction: column;
-    }
+    
 
     .infoBox{
         height: 100%;
@@ -444,6 +450,7 @@ h2{
         height: auto;
     }
 
+    
 
     
 
