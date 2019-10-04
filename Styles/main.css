@@ -9,6 +9,12 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
+    height: 100%;
+    
+    
+}
+::-webkit-scrollbar { 
+    display: none; 
 }
 
 body{
@@ -20,9 +26,15 @@ h1{
     display: inline-block;
 }
 
-h2{
-    display: inline-block;
+footer{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+
 }
+
+
 
 .head{
 
@@ -61,7 +73,7 @@ h2{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 15vw;
+    width: auto;
 }
 
 
@@ -179,6 +191,7 @@ h2{
     font-size: 2em;
     color: black;
     text-decoration: none;
+    padding-left: 1em;
 }
 
 .input{
@@ -292,7 +305,8 @@ h2{
     display:flex;
     flex-direction: column;
     width: 80vw;
-    height: 100vh;
+    height: auto;
+    overflow-y: auto;
 }
 #knownSearch{
     font-size:1rem;
@@ -316,8 +330,8 @@ h2{
 .resultPicture{
     background-color: azure;
     height: auto;
-    width: auto;
-    padding-left: 5vw;
+    width: 25%;
+    /* padding-left: 5vw; */
 }
 
 .pic{
@@ -338,6 +352,14 @@ h2{
     flex-direction: column;
     flex-wrap: wrap;
     height: 100%;
+    text-decoration: none;
+    background-color: transparent;
+    color: black;
+}
+
+.resultTable{
+    height:100%;
+    background-color: azure;
 }
 
 .flex-grid-thirds .col {
@@ -346,6 +368,7 @@ h2{
     font-size:2vw;
     background: azure;
     flex: 1;
+    
 }
 .text{
     font-size:1rem;
@@ -380,8 +403,9 @@ h2{
     }
 
     .headerEnd{
+        
         padding-top: 1vh;
-        margin-right: 25%
+        margin-right: 25%;
     }
     .spacing{
         padding-top: 0rem;
@@ -433,10 +457,8 @@ h2{
     }
     .result{
         width: 100%;
-        height: 20%;
+        height: auto;
     }
-
-    
 
     .infoBox{
         height: 100%;
@@ -448,6 +470,23 @@ h2{
 
     .col{
         height: auto;
+        
+    }
+
+    td{
+        font-size: 2em;
+    }
+
+    .desktop{
+        display: none;
+    }
+
+    .link{
+        padding-right: 0.3em;
+    }
+    footer{
+        font-size: 0.7em;
+
     }
 
     

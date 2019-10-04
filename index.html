@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <title>FoodMaps</title>
 </head>
+
 <body>
     <div class="main">
         <div class="head black">
@@ -16,71 +18,74 @@
             <div class="headerEnd">
                 <a href="#login" class="link"><span class="white headL">Login</span></a>
                 <a href="" class="link"><span class="white headL">Register</span></a>
+                <a href="" class="link desktop"><span class="white headL">Submit a location</span></a>
             </div>
-            
-            
+
         </div>
         <div class="content off-black">
             <span class="instruction white">Don't know what to eat? Use the options below to find somewhere</span>
-            <div class="selectors">
-                <div class="center option">
-                    <div class="description">
-                        <span class="instruction white">Show me restraunts that cost at most:</span>
-                    </div>
+            <form action="results.html" method="get">
+                <div class="selectors">
+                    <div class="center option">
+                        <div class="description">
+                            <span class="instruction white">Show me restraunts that cost at most:</span>
+                        </div>
 
-                    <div class="radioSelector cost">
-                        <input type="radio" name="costs" id=cost4><label for="cost4"></label>
-                        <input type="radio" name="costs" id=cost3><label for="cost3"></label>
-                        <input type="radio" name="costs" id=cost2><label for="cost2"></label>
-                        <input type="radio" name="costs" id=cost1><label for="cost1"></label>
+                        <div class="radioSelector cost">
+                            <input type="radio" name="costs" id=cost4 value="4"><label for="cost4"></label>
+                            <input type="radio" name="costs" id=cost3 value="3"><label for="cost3"></label>
+                            <input type="radio" name="costs" id=cost2 value="2"><label for="cost2"></label>
+                            <input type="radio" name="costs" id=cost1 value="1"><label for="cost1"></label>
+                        </div>
+
+                    </div>
+                    <div class="center option">
+                        <div class="description">
+                            <span class="instruction white">Show me restraunts in this location:</span>
+                        </div>
+                        <div class=location>
+                            <input type="text" id="locateText" class="input text" name="geoLocation"
+                                placeholder="Enter postal code or city">
+                            <button id="locate" class="input"></button>
+                        </div>
+
+                    </div>
+                    <div class="type center option">
+                        <div class="description">
+                            <span class="instruction white">I want to eat:</span>
+                            <span class="instruction white">(Fast food, Sit Down, Italian..)</span>
+
+                        </div>
+
+                        <div class="type">
+                            <input type="text" id="restrauntType" class="input text" name="TypeOfFood">
+                        </div>
+
+                    </div>
+                    <div class="center option">
+                        <div class="description">
+                            <span class="instruction white">Show me restraunts with a rating above or equal to:</span>
+                        </div>
+                        <div class="radioSelector raiting">
+                            <input type="radio" name="stars" id=star5 value="5"><label for="star5"></label>
+                            <input type="radio" name="stars" id=star4 value="4"><label for="star4"></label>
+                            <input type="radio" name="stars" id=star3 value="3"><label for="star3"></label>
+                            <input type="radio" name="stars" id=star2 value="2"><label for="star2"></label>
+                            <input type="radio" name="stars" id=star1 value="1"><label for="star1"></label>
+                        </div>
                     </div>
 
                 </div>
-                <div class="center option">
-                    <div class="description">
-                        <span class="instruction white">Show me restraunts in this location:</span>
-                    </div>
-                    <div class=location>
-                        <input type="text" id="locateText" class="input text" placeholder="Enter postal code or city">
-                        <button id="locate" class="input"></button>
+                <div class="search center">
+                    <div class="searchBar">
+                        <button type="submit" id="search" class="link input">Click to find food</button>
                     </div>
 
                 </div>
-                <div class="type center option">
-                    <div class="description">
-                        <span class="instruction white">I want to eat:</span>
-                        <span class="instruction white">(Fast food, Sit Down, Italian..)</span>
-                        
-                    </div>
-
-                    <div class="type">
-                        <input type="text" id="restrauntType" class="input text" placeholder="">
-                    </div>
-
-                </div>
-                <div class="center option">
-                    <div class="description">
-                        <span class="instruction white">Show me restraunts with a rating above or equal to:</span>
-                    </div>
-                    <div class="radioSelector raiting">
-                        <input type="radio" name="stars" id=star5><label for="star5"></label>
-                        <input type="radio" name="stars" id=star4><label for="star4"></label>
-                        <input type="radio" name="stars" id=star3><label for="star3"></label>
-                        <input type="radio" name="stars" id=star2><label for="star2"></label>
-                        <input type="radio" name="stars" id=star1><label for="star1"></label>
-                    </div>
-                </div>
-
-            </div>
-            <div class="search center">
-                <div class="searchBar">
-                    <a href="" id="search" class="link input">Click to find food</a>
-                </div>
-                
-            </div>
+            </form>
 
             <div class="spacing center">
-        <div class="instruction white">
+                <div class="instruction white">
                     <span>Know where you want to eat? Search for it below</span>
                 </div>
                 <div class="spacing searchBar">
@@ -100,11 +105,20 @@
                         <button id="loginSubmit">Login</button>
                     </div>
                 </div>
-                
             </div>
         </div>
 
+        <footer class="black">
+            <div class="head black">
+                <a href="" class="link"><span class="white headL">About us</span></a>
+                <a href="" class="link"><span class="white headL">Contact us</span></a>
+                <a href="" class="link"><span class="white headL">Help</span></a>
+            </div>
+
+        </footer>
+
     </div>
- 
+
 </body>
+
 </html>
