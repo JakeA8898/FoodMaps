@@ -102,12 +102,16 @@ footer{
     opacity: 1;
 }
 
+
+
 .popup{
-    margin: 70px auto;
+    margin: 15vh auto;
     padding: 20px;
     background: #fff;
     border-radius: 5px;
-    width: 20vw;;
+    width: 10vw;
+    min-width: 175px;
+    max-width: 250px;
     position: relative;
     top: 0;
     display: flex;
@@ -126,6 +130,12 @@ footer{
     color: #333;
 }
 
+.largeTB{
+    height: 5vh;
+    min-height: 100px;
+    max-height: 150px;
+}
+
 .title{
     font-size: 2em;
     padding-top: 1vh;
@@ -141,6 +151,14 @@ footer{
 
 .popupText{
     margin-bottom: 1em;
+    width: 15vw;
+    min-width: 100px;
+    max-width: 150px;
+    font-size: 0.2em;
+}
+
+.popupText::placeholder{
+    font-size: 0.8em;
 }
 
 .selectors{
@@ -201,7 +219,8 @@ h2{
 	text-decoration: none;
 	font-weight: bold;
 	display: inline-block;
-	font-size: 1rem;
+    font-size: 1rem;
+    
     
 }
 
@@ -285,6 +304,11 @@ h2{
     border-radius: 3rem;
     font-size: 2rem;
     padding: 0.4rem;
+}
+
+#loginSubmit{
+    border-radius: 3rem;
+    font-size: 1.2rem;
 }
 
 .sidebar{
