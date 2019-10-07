@@ -20,6 +20,7 @@
 body{
     margin: 0;
     font-family: 'Squada One', cursive;
+    overflow: auto;
 }
 
 h1{
@@ -84,6 +85,7 @@ footer{
     align-items: center;
     height: 90vh;
     min-height: 10em;
+    overflow: auto;
 }
 
 .overlay{
@@ -109,9 +111,10 @@ footer{
     padding: 20px;
     background: #fff;
     border-radius: 5px;
-    width: 10vw;
-    min-width: 175px;
-    max-width: 250px;
+    border: 3px solid black;
+    width: 13vw;
+    min-width: 180px;
+    max-width: 300px;
     position: relative;
     top: 0;
     display: flex;
@@ -220,8 +223,14 @@ h2{
 	font-weight: bold;
 	display: inline-block;
     font-size: 1rem;
-    
-    
+}
+.left{
+    text-align: left;
+}
+
+.fullWidth{
+    width: 100%;
+    font-size: 0.8rem;
 }
 
 #locate:after{
