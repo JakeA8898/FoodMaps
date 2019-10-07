@@ -1,9 +1,11 @@
+/* The main class surounds everything in the body  */
 .main{
     display: flex;
     flex-direction: column;
     font-size: 1em;
 }
 
+/* Displays the results of a search or restraunt  */
 .results{
     display: flex;
     flex-direction: row;
@@ -12,11 +14,13 @@
     height: 100%;   
 }
 
+/* sets background and height */
 .restaurantInfo{
     height:100%;
     background-color: azure;
 }
 
+/* Modifies items with the col class which are children of restrauntInfo class */
 .restaurantInfo .col {
     width: 100%;
     height:auto ;
@@ -25,20 +29,19 @@
     flex: 1;   
 }
 
+/* removes the scrollbar  */
 ::-webkit-scrollbar { 
     display: none; 
 }
 
+/* These apply to everything in the page, as it modifies the body */
 body{
     margin: 0;
     font-family: 'Squada One', cursive;
     overflow: auto;
 }
 
-h1{
-    display: inline-block;
-}
-
+/* Makes the footer take up the whole width of the page and defines how ot display its contents */
 footer{
     display: flex;
     flex-direction: row;
@@ -46,14 +49,11 @@ footer{
     justify-content: center;
 
 }
-
-
-
+/* Displays items in the head bar of the page  */
 .head{
 
     display: flex;
     flex-direction: row;
-    
     justify-content: space-between;
     align-items: center;
     top: 0;
@@ -63,24 +63,26 @@ footer{
     padding-right: 5vw;
     
 }
-
+/* Adds a hover effect to links with headL class */
 .headL:hover{
     color: #1f9cff;
 }
-
+/* class for the black background color  */
 .black{
     background: rgb(26, 25, 25);
 }
 
+/* class for the accent background color  */
 .off-black{
     background: rgb(35, 47, 63);
-
 }
 
+/* White text color  */
 .white{
     color: azure;
 }
 
+/* Aligns header content to the end of the header  */
 .headerEnd{
     display: flex;
     flex-direction: row;
@@ -89,7 +91,7 @@ footer{
     width: auto;
 }
 
-
+/* Displays all the items in the content div on hte page  */
 .content{
     display: flex;
     flex-direction: column;
@@ -100,8 +102,8 @@ footer{
     overflow: auto;
 }
 
+/* Class for the popup overlays  */
 .overlay{
-    
     position: fixed;
     top: 0;
     bottom: 0;
@@ -111,13 +113,14 @@ footer{
     opacity: 0;
 }
 
+/* For when the overlays is targeted  */
 .overlay:target{
     visibility: visible;
     opacity: 1;
 }
 
 
-
+/* The design for the popup windows */
 .popup{
     margin: 15vh auto;
     padding: 20px;
@@ -135,7 +138,7 @@ footer{
     align-items: center;
 
 }
-
+/* Design for the close button  */
 .popup .close{
     position: absolute;
     top: 1vh;
@@ -145,12 +148,7 @@ footer{
     color: #333;
 }
 
-.largeTB{
-    height: 5vh;
-    min-height: 100px;
-    max-height: 150px;
-}
-
+/* increases the size of certin text  */
 .title{
     font-size: 2em;
     padding-top: 1vh;
@@ -158,12 +156,14 @@ footer{
     font-weight: bold;
 }
 
+/* aligns information  */
 .information{
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
+/* styles for text in a popup box  */
 .popupText{
     margin-bottom: 1em;
     width: 15vw;
@@ -172,10 +172,12 @@ footer{
     font-size: 0.2em;
 }
 
+/* placeholder text size in the popup  */
 .popupText::placeholder{
     font-size: 0.8em;
 }
 
+/* class to slign the objects in the selector div  */
 .selectors{
     display: flex;
     flex-direction: row;
@@ -187,17 +189,19 @@ footer{
     height: auto;
 }
 
+/* sizing and spacing for spacing objects  */
 .instruction{
     
     font-size: 2vw;
     margin-top: 2rem;
 }
 
+/* streaches searchbox */
 .search{
-    
-
     width: 100%;
 }
+
+/* centers objects in div  */
 .center{
     display: flex;
     flex-direction: column;
@@ -205,21 +209,20 @@ footer{
     align-items: center;
 }
 
+/* adjusts the size of an option object  */
 .option{
     width: 50%;
     height: 20vh;
 }
 
-h2{
-    margin: 0.3em;
-}
-
+/* sets the way description objects are displayed  */
 .description{
     display: flex;
     flex-direction: column;
     margin: 0.3em;
 }
 
+/* adjusts the style of link objects  */
 .link{
     font-size: 2em;
     color: black;
@@ -227,6 +230,7 @@ h2{
     padding-left: 1em;
 }
 
+/* adjusts the look and style of input objects  */
 .input{
     border: 3px solid #1f9cff;
 	background-color: white;
@@ -236,15 +240,18 @@ h2{
 	display: inline-block;
     font-size: 1rem;
 }
+/* pushes objects to tthe left of the container  */
 .left{
     text-align: left;
 }
 
+/* makes an object take up the full width of a container  */
 .fullWidth{
     width: 100%;
     font-size: 0.8rem;
 }
 
+/* sets the unicode object in the locate button  */
 #locate:after{
     color: #1f9cff;
     content: '\f124';
@@ -252,7 +259,7 @@ h2{
 }
 
 
-
+/* Adjusts the position of the radioselectors  */
 .radioSelector{
     position: relative;
     display: flex;
@@ -260,10 +267,12 @@ h2{
     
 }
 
+/* hides the input inside the radioSelector div  */
 .radioSelector input{
     display: none;
 }
 
+/* adjusts the styles of labels in radioselectors div  */
 .radioSelector label{
     display: block;
     cursor: pointer;
@@ -273,6 +282,7 @@ h2{
 
 }
 
+/* sets the style of the label before it is clicked  */
 .radioSelector label:before{
     font-family: fontAwesome;
     position: relative;
@@ -281,7 +291,7 @@ h2{
     color: azure;
 
 }
-
+/* sets the style after the label is clicked  */
 .radioSelector label:after{
     font-family: fontAwesome;
     position: relative;
@@ -294,12 +304,14 @@ h2{
     
 
 }
+/* makes the after style be seen when a number of conditions happen  */
 .radioSelector label:hover:after,
 .radioSelector label:hover ~ label:after,
 .radioSelector input:checked ~ label:after{
     opacity: 1;
 }
 
+/* These next before and after labels sets the content of the labels  */
 .raiting label:before{
     content: '\f005';
 }
@@ -316,22 +328,37 @@ h2{
     content: '\f155';
 }
 
+/* adds spacing  */
 .spacing{
     padding-top: 2rem;
 }
 
 
+/* odifies the search object  */
 #search{
     border-radius: 3rem;
     font-size: 2rem;
     padding: 0.4rem;
 }
 
+/* These modify the popup submit buttons  */
 #loginSubmit{
     border-radius: 3rem;
     font-size: 1.2rem;
 }
 
+#registerSubmit{
+    border-radius: 3rem;
+    font-size: 1.2rem;
+}
+
+#SubmitLoc{
+    border-radius: 3rem;
+    font-size: 1.2rem;
+    margin-top: 0.5em;
+}
+
+/* Adjusts the sizing of the sidebar  */
 .sidebar{
     
     width: 20vw;
@@ -340,6 +367,7 @@ h2{
 
 }
 
+/* sets positioning for the position objects  */
 .position{
     position: relative;
     justify-content: center;
@@ -347,6 +375,7 @@ h2{
     font-size: 2rem;
 }
 
+/* sets the positioning and overflow rules for the resultPage container  */
 .resultPage{
     display:flex;
     flex-direction: column;
@@ -354,15 +383,14 @@ h2{
     height: auto;
     overflow-y: auto;
 }
+
+/* sets sizing for the knownsearch object  */
 #knownSearch{
     font-size:1rem;
     width: 75%;
     height:auto;
 }
-
-
-
-
+/* styles the result objects  */
 .result{
     display: flex;
     flex-direction: row;
@@ -374,18 +402,20 @@ h2{
     
 }
 
+/* sets sizing and background for the resultPicture object  */
 .resultPicture{
     background-color: azure;
     height: auto;
     width: 25%;
-    /* padding-left: 5vw; */
 }
 
+/* sets height of pic object  */
 .pic{
     height:auto;
     width: 300px;
 }
 
+/* sets sizing and positioning for infoBox objects  */
 .infoBox{
     display: flex;
     flex-direction: column;
@@ -394,6 +424,7 @@ h2{
     height: auto;
 }
 
+/* adjusts sizing and positioning for flex-grid-thirds objects  */
 .flex-grid-thirds {
     display: flex;
     flex-direction: column;
@@ -405,12 +436,13 @@ h2{
 }
 
 
-
+/* sets height and background for resultTable  */
 .resultTable{
     height:100%;
     background-color: azure;
 }
 
+/* adjust col objects in flex-grid-thirds  */
 .flex-grid-thirds .col {
     width: 100%;
     height:auto ;
@@ -419,26 +451,29 @@ h2{
     flex: 1;   
 }
 
+/* adjusts the size of .text objects  */
 .text{
     font-size:1rem;
     width: 80%;
     height:auto;
 }
 
-
+/* puts searchBar in the center  */
 .searchBar{
     text-align: center;
 }
 
 
+/* This section is used when the screen is 600px or smaller  */
 @media only screen and (max-width: 600px){
+    /* adjust overflow on the whole page  */
     html, body{
         overflow-x: hidden;
         overflow-y: auto;
         
     }
     
-
+    /* sizing for the whole body  */
     body{
         position: fixed;
         background-color: rgb(35, 47, 63);
@@ -447,105 +482,117 @@ h2{
         height: auto;
     }
     
+    /* sets width of .head for the whole screen  */
     .head{
         width: 100%;
     }
 
+    /* changes sizes and adds margin  */
     .headerEnd{
         
         padding-top: 1vh;
         margin-right: 25%;
     }
+    /* adjusts spacing for smaller screen  */
     .spacing{
         padding-top: 0rem;
     }
-
+    /* adjusts text size for smaller screen  */
     .instruction{
         font-size:1em;
         text-align: center;
     }
 
+    /* changes flex direction  */
     .selectors{
         flex-direction: column;
     }
+
+    /* changes width and height  */
     .option{
         width: 100%;
         height: auto;
     }
-
+    /* adds margins to object  */
     .searchBar{
         margin-bottom: 10%;
     }
 
+    /* this object is not displayed on mobile  */
     .sidebar{
         display: none;
     }
 
+    /* adjusts height to properly fill space  */
     #search{
         height: auto;
     }
 
+    /* centers text  */
     .center{
         text-align: center;
     }
 
+    /* adjusts layout and height  */
     .results{
-        flex-direction: column;
-        
+        flex-direction: column; 
         height: 90vh;
     }
 
-
+    /* does not display pictures  */
     .resultPicture{
         display: none;
     }
 
+    /* sets size and spacing  */
     .resultPage{
         width: 100%;
         height: 90vh;
         margin-bottom: 1em;
     }
+    /* adjusts the size  */
     .result{
         width: 100%;
         height: auto;
     }
 
+    /* sets height to max  */
     .infoBox{
         height: 100%;
     }
     
+    /* sets font size for mobile  */
     .desc{
         font-size: 2em;
     }
-
+    /* Sets height  */
     .col{
         height: auto;
         
     }
 
+    /* sets the font size for all td items  */
     td{
         font-size: 2em;
     }
 
+    /* items with desktop class are not shown on mobile  */
     .desktop{
         display: none;
     }
 
+    /* adds padding for mobile  */
     .link{
         padding-right: 0.3em;
     }
+    /* Adjusts sizing for footer  */
     footer{
         font-size: 0.7em;
 
     }
-
+    /* makes font bigger  */
     .enlarge{
         font-size: 2em;
     }
-
-    
-
-    
-
 
 }
