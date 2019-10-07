@@ -20,6 +20,7 @@
 body{
     margin: 0;
     font-family: 'Squada One', cursive;
+    overflow: auto;
 }
 
 h1{
@@ -84,6 +85,7 @@ footer{
     align-items: center;
     height: 90vh;
     min-height: 10em;
+    overflow: auto;
 }
 
 .overlay{
@@ -102,12 +104,17 @@ footer{
     opacity: 1;
 }
 
+
+
 .popup{
-    margin: 70px auto;
+    margin: 15vh auto;
     padding: 20px;
     background: #fff;
     border-radius: 5px;
-    width: 20vw;;
+    border: 3px solid black;
+    width: 13vw;
+    min-width: 180px;
+    max-width: 300px;
     position: relative;
     top: 0;
     display: flex;
@@ -126,6 +133,12 @@ footer{
     color: #333;
 }
 
+.largeTB{
+    height: 5vh;
+    min-height: 100px;
+    max-height: 150px;
+}
+
 .title{
     font-size: 2em;
     padding-top: 1vh;
@@ -141,6 +154,14 @@ footer{
 
 .popupText{
     margin-bottom: 1em;
+    width: 15vw;
+    min-width: 100px;
+    max-width: 150px;
+    font-size: 0.2em;
+}
+
+.popupText::placeholder{
+    font-size: 0.8em;
 }
 
 .selectors{
@@ -201,8 +222,15 @@ h2{
 	text-decoration: none;
 	font-weight: bold;
 	display: inline-block;
-	font-size: 1rem;
-    
+    font-size: 1rem;
+}
+.left{
+    text-align: left;
+}
+
+.fullWidth{
+    width: 100%;
+    font-size: 0.8rem;
 }
 
 #locate:after{
@@ -285,6 +313,11 @@ h2{
     border-radius: 3rem;
     font-size: 2rem;
     padding: 0.4rem;
+}
+
+#loginSubmit{
+    border-radius: 3rem;
+    font-size: 1.2rem;
 }
 
 .sidebar{
