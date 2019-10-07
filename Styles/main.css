@@ -404,9 +404,7 @@ h2{
     color: black;
 }
 
-.enlarge{
-    font-size: 2em;
-}
+
 
 .resultTable{
     height:100%;
@@ -539,6 +537,10 @@ h2{
     footer{
         font-size: 0.7em;
 
+    }
+
+    .enlarge{
+        font-size: 2em;
     }
 
     

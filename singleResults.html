@@ -16,8 +16,9 @@
         <div class="head black">
             <a href="index.html" class="link"><span class="white headL">FoodMaps</span></a>
             <div class="headerEnd">
-                <a href="" class="link"><span class="white headL">Login</span></a>
-                <a href="" class="link"><span class="white headL">Register</span></a>
+                <a href="#login" class="link"><span class="white headL">Login</span></a>
+                <a href="#register" class="link"><span class="white headL">Register</span></a>
+                <a href="#NewLocation" class="link desktop"><span class="white headL">Submit a location</span></a>
             </div>
         </div>
 
@@ -78,7 +79,8 @@
                                 </tr>
                                 <tr class="col">
                                     <td>Address: 1170 Upper James St, Hamilton, ON L9C 3B1 | Hours of operation:
-                                        Monday-Sunday 4:00PM-11:00PM | Rating: 4.5/5.0 Stars | Cost: $$$ | Phone Number: (905)
+                                        Monday-Sunday 4:00PM-11:00PM | Rating: 4.5/5.0 Stars | Cost: $$$ | Phone Number:
+                                        (905)
                                         574-7880</td>
                                     <br>
                                 </tr>
@@ -180,6 +182,62 @@
 
             </div>
 
+        </div>
+
+        <div id="login" class="overlay">
+            <div class="popup">
+                <span class=title>Login</span>
+                <a class="close" href="#">&times;</a>
+                <div class="information">
+                    <form action="" method="POST" class="center">
+                        <input type="text" id="usernameL" class="popupText input" placeholder="Username">
+                        <input type="password" id="passwordL" class="popupText input" placeholder="Password">
+                        <button type="submit" id="loginSubmit" class="center input">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="register" class="overlay">
+            <div class="popup">
+                <span class=title>Register</span>
+                <a class="close" href="#">&times;</a>
+                <div class="information">
+                    <form action="" method="POST" class="center">
+                        <span class="">Enter email</span>
+                        <input type="email" id="emailR" class="popupText input" placeholder="Email">
+                        <span class="">Choose a username</span>
+                        <input type="text" id="usernameR" class="popupText input" placeholder="Username">
+                        <span class="">Enter a password</span>
+                        <input type="password" id="passwordR" class="popupText input" placeholder="Password">
+                        <span class="">Confirm password</span>
+                        <input type="password" id="passwordRC" class="popupText input" placeholder="Confirm Password">
+                        <button type="submit" id="loginSubmit" class="center input">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="NewLocation" class="overlay">
+            <div class="popup">
+                <span class=title>Submit Location</span>
+                <a class="close" href="#">&times;</a>
+                <div class="information">
+                    <form action="" method="POST" class="center">
+                        <span class="">Restraunt Name</span>
+                        <input type="text" id="RName" class="popupText input" placeholder="Restraunt">
+                        <span class="">Restraunt latitude</span>
+                        <input type="text" id="latitude" class="popupText input" placeholder="Latitude">
+                        <span class="">Restraunt longitude</span>
+                        <input type="text" id="longitude" class="popupText input" placeholder="Longitude">
+                        <span class="">Describe the Restraunt</span>
+                        <textarea type="text" id="Desc" class="popupText input left" rows=10 cols=10 wrap="soft"
+                            placeholder=""></textarea>
+                        <input type="file" name="picture" accept="image/*" class="input fullWidth">
+                        <button type="submit" id="loginSubmit" class="center input">Submit</button>
+                    </form>
+                </div>
+            </div>
         </div>
         <footer class="black">
             <div class="head black">
