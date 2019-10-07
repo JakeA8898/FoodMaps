@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Import stylesheets, main.css for page styles, google fonts for site font, font-awesome for icons liek stars -->
     <link rel="stylesheet" type="text/css" href="Styles/main.css">
     <link href="https://fonts.googleapis.com/css?family=Squada+One&display=swap" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -13,6 +14,7 @@
 
 <body>
     <div class="main">
+        <!-- header bar, including links leading to login popup, register opoup and submit a location popup -->
         <div class="head black">
             <a href="index.html" class="link"><span class="white headL">FoodMaps</span></a>
             <div class="headerEnd">
@@ -22,16 +24,21 @@
             </div>
 
         </div>
+        <!-- The content contains all of the inputs on the page -->
         <div class="content off-black">
             <span class="instruction white">Don't know what to eat? Use the options below to find somewhere</span>
+            <!-- This form takes all user results and submits them using the get method. It also takes them to the results page -->
             <form action="results.html" method="get">
+                <!-- Selectors are the options users can select when inputing their search options -->
                 <div class="selectors">
-                    <div class="center option">
+                    <div class="center option">4
+                        <!-- Description classes are for instructional text -->
                         <div class="description">
                             <span class="instruction white">Show me restraunts that cost at most:</span>
                         </div>
-
+                        <!-- Radio selectors, placed in reverse order for css purposes -->
                         <div class="radioSelector cost">
+                            <!-- The label for each input allows us to insert special symbols -->
                             <input type="radio" name="costs" id=cost4 value="4"><label for="cost4"></label>
                             <input type="radio" name="costs" id=cost3 value="3"><label for="cost3"></label>
                             <input type="radio" name="costs" id=cost2 value="2"><label for="cost2"></label>
@@ -40,33 +47,37 @@
 
                     </div>
                     <div class="center option">
+                        <!-- Gives user instruction -->
                         <div class="description">
                             <span class="instruction white">Show me restraunts in this location:</span>
                         </div>
+                        <!-- Has a text input for user to input area and a button to find exact location -->
                         <div class=location>
                             <input type="text" id="locateText" class="input text" name="geoLocation"
                                 placeholder="Enter postal code or city">
                             <button id="locate" class="input"></button>
                         </div>
-
                     </div>
                     <div class="type center option">
+                        <!-- Gives user instruction -->
                         <div class="description">
                             <span class="instruction white">I want to eat:</span>
                             <span class="instruction white">(Fast food, Sit Down, Italian..)</span>
-
                         </div>
-
+                        <!-- Text box for user to input their querry -->
                         <div class="type">
                             <input type="text" id="restrauntType" class="input text" name="TypeOfFood">
                         </div>
 
                     </div>
                     <div class="center option">
+                        <!-- Instruction for user -->
                         <div class="description">
                             <span class="instruction white">Show me restraunts with a rating above or equal to:</span>
                         </div>
+                        <!-- Radio selectors for stars, placed in reverse order for css purposes -->
                         <div class="radioSelector raiting">
+                            <!-- The labels allow for special symbols forthe radio boxes  -->
                             <input type="radio" name="stars" id=star5 value="5"><label for="star5"></label>
                             <input type="radio" name="stars" id=star4 value="4"><label for="star4"></label>
                             <input type="radio" name="stars" id=star3 value="3"><label for="star3"></label>
@@ -76,11 +87,11 @@
                     </div>
 
                 </div>
+                <!-- This is the search button that takes the users information and submits the form -->
                 <div class="search center">
                     <div class="searchBar">
                         <button type="submit" id="search" class="link input">Click to find food</button>
                     </div>
-
                 </div>
             </form>
 
@@ -88,19 +99,22 @@
                 <div class="instruction white">
                     <span>Know where you want to eat? Search for it below</span>
                 </div>
+                <!-- Allows a user to search for a specific restraunt -->
                 <div class="spacing searchBar">
                     <input type="text" id="knownSearch" class="input text " placeholder="Enter where you want to eat">
                     <button id="buttonSearch" class="input">Find food</button>
                 </div>
 
             </div>
-
+            <!-- Next three divs(at this level) are for the three popup boxes. They are triggered by the buttons in the header -->
             <div id="login" class="overlay">
                 <div class="popup">
                     <span class=title>Login</span>
+                    <!-- Button to close the popup  -->
                     <a class="close" href="#">&times;</a>
                     <div class="information">
-                        <form action="" method="POST" class="center">
+                        <!-- Form for the user to submit their login information, through POST, as there is passwords  -->
+                        <form action="#" method="POST" class="center">
                             <input type="text" id="usernameL" class="popupText input" placeholder="Username">
                             <input type="password" id="passwordL" class="popupText input" placeholder="Password">
                             <button type="submit" id="loginSubmit" class="center input">Login</button>
@@ -112,9 +126,11 @@
             <div id="register" class="overlay">
                 <div class="popup">
                     <span class=title>Register</span>
+                    <!-- Button to close the popup -->
                     <a class="close" href="#">&times;</a>
                     <div class="information">
-                        <form action="" method="POST" class="center">
+                        <!-- Form to register for the site, uses POST due to passwords -->
+                        <form action="#" method="POST" class="center">
                             <span class="">Enter email</span>
                             <input type="email" id="emailR" class="popupText input" placeholder="Email">
                             <span class="">Choose a username</span>
@@ -124,18 +140,21 @@
                             <span class="">Confirm password</span>
                             <input type="password" id="passwordRC" class="popupText input"
                                 placeholder="Confirm Password">
-                            <button type="submit" id="loginSubmit" class="center input">Register</button>
+                            <button type="submit" id="registerSubmit" class="center input">Register</button>
                         </form>
                     </div>
                 </div>
             </div>
 
+            
             <div id="NewLocation" class="overlay">
                 <div class="popup">
                     <span class=title>Submit Location</span>
+                    <!-- Cloce button for popup -->
                     <a class="close" href="#">&times;</a>
                     <div class="information">
-                        <form action="" method="POST" class="center">
+                        <!-- Allows a user to submit a new item to the database  -->
+                        <form action="#" method="POST" class="center">
                             <span class="">Restraunt Name</span>
                             <input type="text" id="RName" class="popupText input" placeholder="Restraunt">
                             <span class="">Restraunt latitude</span>
@@ -143,15 +162,16 @@
                             <span class="">Restraunt longitude</span>
                             <input type="text" id="longitude" class="popupText input" placeholder="Longitude">
                             <span class="">Describe the Restraunt</span>
-                            <textarea type="text" id="Desc" class="popupText input left" rows=10 cols=10 wrap="soft" placeholder=""></textarea>
+                            <textarea id="Desc" class="popupText input left" rows=10 cols=10 wrap="soft" placeholder=""></textarea>
                             <input type="file" name="picture" accept="image/*" class="input fullWidth">
-                            <button type="submit" id="loginSubmit" class="center input">Submit</button>
+                            <button type="submit" id="SubmitLoc" class="center input">Submit</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- Footer provides additional links for users -->
         <footer class="black">
             <div class="head black">
                 <a href="" class="link"><span class="white headL">About us</span></a>
