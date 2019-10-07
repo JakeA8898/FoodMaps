@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- import stylesheets, main.css for page tyles, google fonts for site font, font-awesome for icons like stars -->
     <link rel="stylesheet" type="text/css" href="Styles/main.css">
     <link href="https://fonts.googleapis.com/css?family=Squada+One&display=swap" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -13,6 +14,7 @@
 
 <body>
     <div class="main">
+        <!-- Header bar which includes links leading to login popup, register popup, and submit a location popup -->
         <div class="head black">
             <a href="index.html" class="link"><span class="white headL">FoodMaps</span></a>
             <div class="headerEnd">
@@ -22,11 +24,13 @@
             </div>
         </div>
 
+        <!-- Results section relating to the side navigation bar -->
         <div class="results off-black">
             <div class="sidebar">
                 <div class="position">
                     <span class="white">Maximum budget:</span>
                 </div>
+                <!-- radio buttons with packages to make it look like cost symbols used in googles API -->
                 <div class="radioSelector cost position">
                     <input type="radio" name="costs" id=cost4><label for="cost4"></label>
                     <input type="radio" name="costs" id=cost3><label for="cost3"></label>
@@ -36,6 +40,7 @@
                 <div class="description position">
                     <span class="white">Location:</span>
                 </div>
+                <!-- input tag to allow user to enter a location or address -->
                 <div class="location position">
                     <input type="text" id="locateText" class="input text" placeholder="Enter postal code or city">
                     <button id="locate" class="input"></button>
@@ -43,12 +48,14 @@
                 <div class="description position">
                     <span class="white">Restaurant type:</span>
                 </div>
+                <!-- input tag to allow user to enter a restaruant type or food type -->
                 <div class="type position">
                     <input type="text" id="restrauntType" class="input text" placeholder="">
                 </div>
                 <div class="description position">
                     <span class="white">Minimum rating:</span>
                 </div>
+                <!-- Radio buttons in combination with css styles and imported fonts to look to selectable stars for ratings -->
                 <div class="radioSelector raiting position">
                     <input type="radio" name="stars" id=star5><label for="star5"></label>
                     <input type="radio" name="stars" id=star4><label for="star4"></label>
@@ -62,6 +69,7 @@
                 <div class="description position">
                     <span class="white">(Alternatively) Search by name:</span>
                 </div>
+                <!-- text field and search button to search for restaruant names -->
                 <div class=" spacing position searchBar">
                     <input type="text" id="knownSearch" class="input text " placeholder="Enter where you want to eat">
                     <button id="buttonSearch" class="input">Find food</button>
@@ -70,13 +78,17 @@
 
             <div class="resultPage">
 
+                <!-- each resultbox is in its own div labelled result, which lays out the results -->
                 <div class="result">
                     <div class="infoBox">
                         <a class="flex-grid-thirds" href="singleResults.html">
                             <table class="resultTable">
                                 <tr class="col">
+                                    <!-- header for the horizontal table labeling the name of the restaruant -->
                                     <td>Name:</td>
+                                    <!-- table data labeling the actual name of the restaruant -->
                                     <td>The Keg Steakhouse + Bar</td>
+                                    <!-- the rest of the table is formatted in this exact way -->
                                 </tr>
                                 <tr class="col">
                                     <td>Address:</td>
@@ -102,6 +114,7 @@
                             </table>
                         </a>
                     </div>
+                    <!-- arranged in a flex box, these pictures aligns with the right side of the page and allows information to be placed to the left -->
                     <div class="resultPicture">
                         <img src="media/Keg_dining_room.jpg" alt="The Keg Dining Room" class="pic">
                     </div>
@@ -115,8 +128,11 @@
                         <a class="flex-grid-thirds" href="">
                             <table class="resultTable">
                                 <tr class="col">
+                                    <!-- header for the horizontal table labeling the name of the restaruant -->
                                     <td>Name:</td>
+                                    <!-- table data labeling the actual name of the restaruant -->
                                     <td>Spring Sushi</td>
+                                    <!-- the rest of the table is formatted in this exact way -->
                                 </tr>
                                 <tr class="col">
                                     <td>Address:</td>
@@ -142,6 +158,7 @@
                             </table>
                         </a>
                     </div>
+                    <!-- arranged in a flex box, these pictures aligns with the right side of the page and allows information to be placed to the left -->
                     <div class="resultPicture">
                         <img src="media/Spring_dining_room.jpg" alt="The Spring Sushi Dining Room" class="pic">
                     </div>
@@ -155,8 +172,11 @@
                         <a class="flex-grid-thirds" href="">
                             <table class="resultTable">
                                 <tr class="col">
+                                    <!-- header for the horizontal table labeling the name of the restaruant -->
                                     <td>Name:</td>
+                                    <!-- table data labeling the actual name of the restaruant -->
                                     <td>Turtle Jack's Upper James</td>
+                                    <!-- the rest of the table is formatted in this exact way -->
                                 </tr>
                                 <tr class="col">
                                     <td>Address:</td>
@@ -181,6 +201,7 @@
                             </table>
                         </a>
                     </div>
+                    <!-- arranged in a flex box, these pictures aligns with the right side of the page and allows information to be placed to the left -->
                     <div class="resultPicture">
                         <img src="media/Turtle_dining_room.jpg" alt="The Turtle Jacks Room" class="pic">
                     </div>
@@ -194,8 +215,11 @@
                         <a class="flex-grid-thirds" href="">
                             <table class="resultTable">
                                 <tr class="col">
+                                    <!-- header for the horizontal table labeling the name of the restaruant -->
                                     <td>Name:</td>
+                                    <!-- table data labeling the actual name of the restaruant -->
                                     <td>Spring Grill House</td>
+                                    <!-- the rest of the table is formatted in this exact way -->
                                 </tr>
                                 <tr class="col">
                                     <td>Address:</td>
@@ -220,6 +244,7 @@
                             </table>
                         </a>
                     </div>
+                    <!-- arranged in a flex box, these pictures aligns with the right side of the page and allows information to be placed to the left -->
                     <div class="resultPicture">
                         <img src="media/Grill_dining_room.jpg" alt="The Spring Grill Dining Room" class="pic">
                     </div>
@@ -232,12 +257,15 @@
 
         </div>
 
+        <!-- Next three divs(at this level) are for the three popup boxes. They are triggered by the buttons in the header -->
         <div id="login" class="overlay">
             <div class="popup">
                 <span class=title>Login</span>
+                <!-- Button to close the popup -->
                 <a class="close" href="#">&times;</a>
                 <div class="information">
-                    <form action="" method="POST" class="center">
+                    <!-- For for the user to submit their login information, through POST, as there is passwords -->
+                    <form action="#" method="POST" class="center">
                         <input type="text" id="usernameL" class="popupText input" placeholder="Username">
                         <input type="password" id="passwordL" class="popupText input" placeholder="Password">
                         <button type="submit" id="loginSubmit" class="center input">Login</button>
@@ -249,9 +277,11 @@
         <div id="register" class="overlay">
             <div class="popup">
                 <span class=title>Register</span>
+                <!-- Button to close the popup -->
                 <a class="close" href="#">&times;</a>
                 <div class="information">
-                    <form action="" method="POST" class="center">
+                    <!-- For for the user to submit their registrar information, through POST, as there is passwords -->
+                    <form action="#" method="POST" class="center">
                         <span class="">Enter email</span>
                         <input type="email" id="emailR" class="popupText input" placeholder="Email">
                         <span class="">Choose a username</span>
@@ -260,7 +290,7 @@
                         <input type="password" id="passwordR" class="popupText input" placeholder="Password">
                         <span class="">Confirm password</span>
                         <input type="password" id="passwordRC" class="popupText input" placeholder="Confirm Password">
-                        <button type="submit" id="loginSubmit" class="center input">Register</button>
+                        <button type="submit" id="registerSubmit" class="center input">Register</button>
                     </form>
                 </div>
             </div>
@@ -269,9 +299,11 @@
         <div id="NewLocation" class="overlay">
             <div class="popup">
                 <span class=title>Submit Location</span>
+                <!-- Button to close the popup -->
                 <a class="close" href="#">&times;</a>
                 <div class="information">
-                    <form action="" method="POST" class="center">
+                    <!-- For for the user to submit their location information, through POST, as there is passwords -->
+                    <form action="#" method="POST" class="center">
                         <span class="">Restraunt Name</span>
                         <input type="text" id="RName" class="popupText input" placeholder="Restraunt">
                         <span class="">Restraunt latitude</span>
@@ -279,13 +311,15 @@
                         <span class="">Restraunt longitude</span>
                         <input type="text" id="longitude" class="popupText input" placeholder="Longitude">
                         <span class="">Describe the Restraunt</span>
-                        <textarea type="text" id="Desc" class="popupText input left" rows=10 cols=10 wrap="soft" placeholder=""></textarea>
+                        <textarea id="Desc" class="popupText input left" rows=10 cols=10 wrap="soft" placeholder=""></textarea>
                         <input type="file" name="picture" accept="image/*" class="input fullWidth">
-                        <button type="submit" id="loginSubmit" class="center input">Submit</button>
+                        <button type="submit" id="SubmitLoc" class="center input">Submit</button>
                     </form>
                 </div>
             </div>
         </div>
+
+        <!-- Footer which includes links to an about us, contact us and help page -->
         <footer class="black">
             <div class="head black">
                 <a href="" class="link"><span class="white headL">About us</span></a>
