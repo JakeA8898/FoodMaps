@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Squada+One&display=swap" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <title>FoodMaps</title>
+    <script src="validate.js" defer></script>
 </head>
 
 <body>
@@ -114,10 +115,15 @@
                     <a class="close" href="#">&times;</a>
                     <div class="information">
                         <!-- Form for the user to submit their login information, through POST, as there is passwords  -->
-                        <form action="#" method="POST" class="center">
+                        <form action="#login" method="POST" id="form" class="center">
+                            <div>
+                                <label id="error_ListL"></label>
+                            </div>
                             <input type="text" id="usernameL" class="popupText input" placeholder="Username">
                             <input type="password" id="passwordL" class="popupText input" placeholder="Password">
-                            <button type="submit" id="loginSubmit" class="center input">Login</button>
+                            <div>
+                                <input type="submit" id="loginSubmit" class="center input">
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -130,7 +136,10 @@
                     <a class="close" href="#">&times;</a>
                     <div class="information">
                         <!-- Form to register for the site, uses POST due to passwords -->
-                        <form action="#" method="POST" class="center">
+                        <form action="#register" method="POST" id="form2" class="center">
+                            <div>
+                                <label id="error_ListR"></label>
+                            </div>
                             <span class="">Enter email</span>
                             <input type="email" id="emailR" class="popupText input" placeholder="Email">
                             <span class="">Choose a username</span>
@@ -140,13 +149,15 @@
                             <span class="">Confirm password</span>
                             <input type="password" id="passwordRC" class="popupText input"
                                 placeholder="Confirm Password">
-                            <button type="submit" id="registerSubmit" class="center input">Register</button>
+                            <div>
+                                <input type="submit" id="registerSubmit" class="center input">
+                            </div>
                         </form>
                     </div>
                 </div>
             </div>
 
-            
+
             <div id="NewLocation" class="overlay">
                 <div class="popup">
                     <span class=title>Submit Location</span>
@@ -154,7 +165,10 @@
                     <a class="close" href="#">&times;</a>
                     <div class="information">
                         <!-- Allows a user to submit a new item to the database  -->
-                        <form action="#" method="POST" class="center">
+                        <form action="#NewLocation" method="POST" id="form3" class="center">
+                            <div>
+                                <label id="error_ListS"></label>
+                            </div>
                             <span class="">Restraunt Name</span>
                             <input type="text" id="RName" class="popupText input" placeholder="Restraunt">
                             <span class="">Restraunt latitude</span>
@@ -162,9 +176,12 @@
                             <span class="">Restraunt longitude</span>
                             <input type="text" id="longitude" class="popupText input" placeholder="Longitude">
                             <span class="">Describe the Restraunt</span>
-                            <textarea id="Desc" class="popupText input left" rows=10 cols=10 wrap="soft" placeholder=""></textarea>
+                            <textarea id="Desc" class="popupText input left" rows=10 cols=10 wrap="soft"
+                                placeholder=""></textarea>
                             <input type="file" name="picture" accept="image/*" class="input fullWidth">
-                            <button type="submit" id="SubmitLoc" class="center input">Submit</button>
+                            <div>
+                                <input type="submit" id="submitLoc" class="center input">
+                            </div>
                         </form>
                     </div>
                 </div>
