@@ -20,6 +20,7 @@ const errorOut3 = document.getElementById('error_ListS');
 
 // patterns used for passwords.
 const UpperCaseChars = /[A-Z]/g;
+const Direction = /[N,S,E,W]/g;
 const LowerCaseChars = /[a-z]/g;
 const numbers = /[0-9]/g;
 const pwLength = 8;
@@ -139,14 +140,14 @@ function validateMatch(){
 
 function validateLat(){
     if (!(latitude.value.match(numbers)
-    && latitude.value.match(UpperCaseChars))){
+    && latitude.value.match(Direction))){
         errors.push('Latitude Invalid');
     }
 }
 
 function validateLong(){
     if (!(longitude.value.match(numbers)
-    && longitude.value.match(UpperCaseChars))){
+    && longitude.value.match(Direction))){
         errors.push('Longitude Invalid');
     }
 }
