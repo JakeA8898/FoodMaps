@@ -29,7 +29,7 @@
         <div class="content off-black">
             <span class="instruction white">Don't know what to eat? Use the options below to find somewhere</span>
             <!-- This form takes all user results and submits them using the get method. It also takes them to the results page -->
-            <form action="results.html" method="get">
+            <form action="results.html" id="form4" method="get">
                 <!-- Selectors are the options users can select when inputing their search options -->
                 <div class="selectors">
                     <div class="center option">
@@ -48,6 +48,9 @@
 
                     </div>
                     <div class="center option">
+                        <div>
+                            <label id="error_ListP" class="white"></label>
+                        </div>
                         <!-- Gives user instruction -->
                         <div class="description">
                             <span class="instruction white">Show me restraunts in this location:</span>

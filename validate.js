@@ -18,6 +18,11 @@ const longitude = document.getElementById('longitude');
 const description = document.getElementById('Desc');
 const errorOut3 = document.getElementById('error_ListS');
 
+const form4 = document.getElementById('form4');
+const postal = document.getElementById('locateText');
+const search = document.getElementById('search');
+const errorOut4 = document.getElementById('error_ListP');
+
 // patterns used for passwords.
 const UpperCaseChars = /[A-Z]/g;
 const Direction = /[N,S,E,W]/g;
@@ -64,6 +69,18 @@ if(form3){
         if (errors.length > 0){
             e.preventDefault();
             errorOut3.innerText = errors.join(', ');
+            errors = [];
+        }
+    });
+}
+
+if(form4){
+    form4.addEventListener('submit', (e) => {
+    //  Check if values are empty, if the email is correct and if the password meets requirements
+        validatePostal();
+        if (errors.length > 0){
+            e.preventDefault();
+            errorOut4.innerText = errors.join(', ');
             errors = [];
         }
     });
@@ -149,5 +166,13 @@ function validateLong(){
     if (!(longitude.value.match(numbers)
     && longitude.value.match(Direction))){
         errors.push('Longitude Invalid');
+    }
+}
+
+function validatePostal(){
+    if (!((postal.value.match(UpperCaseChars) 
+    || (postal.value.match(LowerCaseChars))
+    && postal.value.match(numbers)))){
+        errors.push('Postal Code Invalid');
     }
 }
