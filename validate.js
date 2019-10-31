@@ -23,12 +23,15 @@ const postal = document.getElementById('locateText');
 const search = document.getElementById('search');
 const errorOut4 = document.getElementById('error_ListP');
 
+const image = document.getElementById('imageUpload');
+
 // patterns used for passwords.
 const UpperCaseChars = /[A-Z]/g;
 const Direction = /[N,S,E,W]/g;
 const LowerCaseChars = /[a-z]/g;
 const numbers = /[0-9]/g;
 const pwLength = 8;
+const allowed_extensions = new Array("jpg", "png", "gif");
 
 // List for holding error messages.
 var errors = [];
@@ -66,6 +69,7 @@ if(form3){
         validateEmptyS();
         validateLat();
         validateLong();
+        validateImage();
         if (errors.length > 0){
             e.preventDefault();
             errorOut3.innerText = errors.join(', ');
@@ -156,15 +160,13 @@ function validateMatch(){
 }
 
 function validateLat(){
-    if (!(latitude.value.match(numbers)
-    && latitude.value.match(Direction))){
+    if (!(latitude.value.match(numbers))){
         errors.push('Latitude Invalid');
     }
 }
 
 function validateLong(){
-    if (!(longitude.value.match(numbers)
-    && longitude.value.match(Direction))){
+    if (!(longitude.value.match(numbers))){
         errors.push('Longitude Invalid');
     }
 }
@@ -174,5 +176,21 @@ function validatePostal(){
     || (postal.value.match(LowerCaseChars))
     && postal.value.match(numbers)))){
         errors.push('Postal Code Invalid');
+    }
+}
+
+function validateImage(){
+    var file_extension = image.value.split('.').pop().toLowerCase();
+    var isValid = true;
+    for(var i = 0; i <= allowed_extensions.length; i++)
+    {
+        if (!(allowed_extensions[i]==file_extension))
+        {
+            isValid = false;
+        }
+    }
+    if (!isValid)
+    {
+        errors.push('Image Upload Invalid');
     }
 }
