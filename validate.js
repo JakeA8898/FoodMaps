@@ -100,6 +100,7 @@ function validateEmptyL(){
     }
 }
 
+// Checking if inputs are empty
 function validateEmptyR(){
     if (name2.value === '' || name2.value == null){
         errors.push('Name field is Empty');
@@ -112,6 +113,7 @@ function validateEmptyR(){
     }
 }
 
+// Checking if inputs are empty
 function validateEmptyS(){
     if (name3.value === '' || name3.value == null){
         errors.push('Name field is Empty');
@@ -143,7 +145,7 @@ function validatePasswordL(){
         errors.push('Password Invalid');
     }
 }
-
+// Validating Password requirements
 function validatePasswordR(){
     if (!(password2.value.match(UpperCaseChars) 
     && password2.value.match(LowerCaseChars) 
@@ -152,25 +154,25 @@ function validatePasswordR(){
         errors.push('Password Invalid');
     }
 }
-
+// Validating match requirements
 function validateMatch(){
     if (!(password2.value == passwordc.value)){
         errors.push('Password Match Invalid');
     }
 }
-
+// Validating lat requirements
 function validateLat(){
     if (!(latitude.value.match(numbers))){
         errors.push('Latitude Invalid');
     }
 }
-
+// Validating long requirements
 function validateLong(){
     if (!(longitude.value.match(numbers))){
         errors.push('Longitude Invalid');
     }
 }
-
+// Validating postal requirements
 function validatePostal(){
     if (!((postal.value.match(UpperCaseChars) 
     || (postal.value.match(LowerCaseChars))
@@ -178,7 +180,7 @@ function validatePostal(){
         errors.push('Postal Code Invalid');
     }
 }
-
+// Validating image upload requirements
 function validateImage(){
     var file_extension = image.value.split('.').pop().toLowerCase();
     var isValid = true;
