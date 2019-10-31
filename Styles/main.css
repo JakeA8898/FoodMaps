@@ -259,6 +259,12 @@ footer{
     font-family: FontAwesome;
 }
 
+#locateSub:after{
+    color: #1f9cff;
+    content: '\f124';
+    font-family: FontAwesome;
+}
+
 
 /* Adjusts the position of the radioselectors  */
 .radioSelector{

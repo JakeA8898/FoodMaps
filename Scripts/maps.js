@@ -1,6 +1,9 @@
+//This file loads google maps data
 var map;
+//labels for the markers
 var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 var infowindow;
+//This data will be pulled from the database, for now it is hardcoded in.
 var markers = [
     ["The Keg Steakhouse + Bar", 43.218760, -79.887384,'<div id="content">' +
     '<div id="siteNotice">' +
@@ -22,6 +25,7 @@ var markers = [
     ["Spring Grill House", 43.208011, -79.889954, 'Spring Grill House']
 ]
 
+//This function loads a map for the single result page
 function initMapSmall(){
     map = new google.maps.Map(document.getElementById('map'),{
         center: {lat: 43.218760, lng:-79.887384},
@@ -35,12 +39,14 @@ function initMapSmall(){
         map:map
     });
 }
+//This function pulls up the map for the regular result page
 function initMapLarge() {
     infowindow = new google.maps.InfoWindow();
     map = new google.maps.Map(document.getElementById('map'), {
         center: { lat: 43.211085, lng: -79.889201 },
         zoom: 14
     });
+    //This adds each item in the list above to the database
     for (var i = 0; i < markers.length; i++) {
         var marker = new google.maps.Marker({
             position: { lat: markers[i][1], lng: markers[i][2] },
@@ -52,7 +58,7 @@ function initMapLarge() {
         });
 
         
-
+        //Adds a listiner to each marker that brings up a description
         marker.addListener('click', (function(marker,i) {
             return function() {
                 infowindow.setContent(markers[i][3]);
