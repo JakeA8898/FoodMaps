@@ -78,6 +78,8 @@
 
             <div class="resultPage">
 
+                <div id='map'></div>>
+
                 <!-- each resultbox is in its own div labelled result, which lays out the results -->
                 <div class="result">
                     <div class="infoBox">
@@ -115,15 +117,15 @@
                     </div>
                     <!-- arranged in a flex box, this picture aligns with the right side of the page and allows information to be placed to the left -->
                     <div class="resultPicture">
-                        <img src="media/keg_location.JPG" alt="The Keg location" class="pic">
+                        <img src="media/Keg_dining_room.jpg" alt="The Keg location" class="pic">
                     </div>
                 </div>
 
                 <!-- next sections are all seperate info boxes for each review -->
                 <div class="result">
                     <div class="infoBox">
-                        
-                            <!-- organized in a table to allow for easier entries and better design aspect -->
+
+                        <!-- organized in a table to allow for easier entries and better design aspect -->
                         <div class="flex-grid-thirds">
                             <table class="restaurantInfo">
                                 <!-- vertical table header -->
@@ -284,6 +286,10 @@
 
         </footer>
     </div>
+    <script type="text/javascript" src="Scripts/maps.js"></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=APIKEYHERE&callback=initMapSmall">
+    </script>
 </body>
 
 </html>
