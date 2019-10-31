@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Squada+One&display=swap" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <title>Search Results</title>
+    <script src="validate.js" defer></script>
 </head>
 
 <body>
@@ -249,14 +250,19 @@
         <div id="login" class="overlay">
             <div class="popup">
                 <span class=title>Login</span>
-                <!-- Button to close the popup -->
+                <!-- Button to close the popup  -->
                 <a class="close" href="#">&times;</a>
                 <div class="information">
-                    <!-- For for the user to submit their login information, through POST, as there is passwords -->
-                    <form action="#" method="POST" class="center">
+                    <!-- Form for the user to submit their login information, through POST, as there is passwords  -->
+                    <form action="#login" method="POST" id="form" class="center">
+                        <div>
+                            <label id="error_ListL"></label>
+                        </div>
                         <input type="text" id="usernameL" class="popupText input" placeholder="Username">
                         <input type="password" id="passwordL" class="popupText input" placeholder="Password">
-                        <button type="submit" id="loginSubmit" class="center input">Login</button>
+                        <div>
+                            <input type="submit" id="loginSubmit" class="center input">
+                        </div>
                     </form>
                 </div>
             </div>
@@ -268,8 +274,11 @@
                 <!-- Button to close the popup -->
                 <a class="close" href="#">&times;</a>
                 <div class="information">
-                    <!-- For for the user to submit their registrar information, through POST, as there is passwords -->
-                    <form action="#" method="POST" class="center">
+                    <!-- Form to register for the site, uses POST due to passwords -->
+                    <form action="#register" method="POST" id="form2" class="center">
+                        <div>
+                            <label id="error_ListR"></label>
+                        </div>
                         <span class="">Enter email</span>
                         <input type="email" id="emailR" class="popupText input" placeholder="Email">
                         <span class="">Choose a username</span>
@@ -278,7 +287,9 @@
                         <input type="password" id="passwordR" class="popupText input" placeholder="Password">
                         <span class="">Confirm password</span>
                         <input type="password" id="passwordRC" class="popupText input" placeholder="Confirm Password">
-                        <button type="submit" id="registerSubmit" class="center input">Register</button>
+                        <div>
+                            <input type="submit" id="registerSubmit" class="center input">
+                        </div>
                     </form>
                 </div>
             </div>
@@ -287,11 +298,14 @@
         <div id="NewLocation" class="overlay">
             <div class="popup">
                 <span class=title>Submit Location</span>
-                <!-- Button to close the popup -->
+                <!-- Cloce button for popup -->
                 <a class="close" href="#">&times;</a>
                 <div class="information">
-                    <!-- For for the user to submit their location information, through POST, as there is passwords -->
-                    <form action="#" method="POST" class="center">
+                    <!-- Allows a user to submit a new item to the database  -->
+                    <form action="#NewLocation" method="POST" id="form3" class="center">
+                        <div>
+                            <label id="error_ListS"></label>
+                        </div>
                         <span class="">Restraunt Name</span>
                         <input type="text" id="RName" class="popupText input" placeholder="Restraunt">
                         <span class="">Restraunt latitude</span>
@@ -301,26 +315,28 @@
                         <span class="">Describe the Restraunt</span>
                         <textarea id="Desc" class="popupText input left" rows=10 cols=10 wrap="soft"
                             placeholder=""></textarea>
-                        <input type="file" name="picture" accept="image/*" class="input fullWidth">
-                        <button type="submit" id="SubmitLoc" class="center input">Submit</button>
+                        <input type="file" name="picture" id="imageUpload" accept="image/*" class="input fullWidth">
+                        <div>
+                            <input type="submit" id="submitLoc" class="center input">
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Footer which includes links to an about us, contact us and help page -->
-        <footer class="black">
-            <div class="head black">
-                <a href="" class="link"><span class="white headL">About us</span></a>
-                <a href="" class="link"><span class="white headL">Contact us</span></a>
-                <a href="" class="link"><span class="white headL">Help</span></a>
-            </div>
+    <!-- Footer which includes links to an about us, contact us and help page -->
+    <footer class="black">
+        <div class="head black">
+            <a href="" class="link"><span class="white headL">About us</span></a>
+            <a href="" class="link"><span class="white headL">Contact us</span></a>
+            <a href="" class="link"><span class="white headL">Help</span></a>
+        </div>
 
-        </footer>
+    </footer>
     </div>
     <script type="text/javascript" src="Scripts/maps.js"></script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=APIKEYHERE&callback=initMapLarge">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=APIKEYHERE&callback=initMapLarge">
     </script>
 </body>
 

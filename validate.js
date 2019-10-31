@@ -81,7 +81,7 @@ if(form3){
 if(form4){
     form4.addEventListener('submit', (e) => {
     //  Check if values are empty, if the email is correct and if the password meets requirements
-        validatePostal();
+        //validatePostal();
         if (errors.length > 0){
             e.preventDefault();
             errorOut4.innerText = errors.join(', ');
