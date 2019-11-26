@@ -16,12 +16,13 @@
 <body>
     <div class="main">
         <!-- header bar, including links leading to login popup, register opoup and submit a location popup -->
+        <?php 'php/inc/login.inc' ?>
         <?php include 'php/inc/header.inc' ?>
         <!-- The content contains all of the inputs on the page -->
         <div class="content off-black">
             <span class="instruction white">Don't know what to eat? Use the options below to find somewhere</span>
             <!-- This form takes all user results and submits them using the get method. It also takes them to the results page -->
-            <form action="results.html" id="form4" method="get">
+            <form action="results.php" id="form4" method="get">
                 <!-- Selectors are the options users can select when inputing their search options -->
                 <div class="selectors">
                     <div class="center option">
@@ -106,96 +107,11 @@
 
             </div>
             <!-- Next three divs(at this level) are for the three popup boxes. They are triggered by the buttons in the header -->
-            <div id="login" class="overlay">
-                <div class="popup">
-                    <span class=title>Login</span>
-                    <!-- Button to close the popup  -->
-                    <a class="close" href="#">&times;</a>
-                    <div class="information">
-                        <!-- Form for the user to submit their login information, through POST, as there is passwords  -->
-                        <form action="#login" method="POST" id="form" class="center">
-                            <div>
-                                <label id="error_ListL"></label>
-                            </div>
-                            <input type="text" id="usernameL" class="popupText input" placeholder="Username">
-                            <input type="password" id="passwordL" class="popupText input" placeholder="Password">
-                            <div>
-                                <input type="submit" id="loginSubmit" class="center input">
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            <div id="register" class="overlay">
-                <div class="popup">
-                    <span class=title>Register</span>
-                    <!-- Button to close the popup -->
-                    <a class="close" href="#">&times;</a>
-                    <div class="information">
-                        <!-- Form to register for the site, uses POST due to passwords -->
-                        <form action="#register" method="POST" id="form2" class="center">
-                            <div>
-                                <label id="error_ListR"></label>
-                            </div>
-                            <span class="">Enter email</span>
-                            <input type="email" id="emailR" class="popupText input" placeholder="Email">
-                            <span class="">Choose a username</span>
-                            <input type="text" id="usernameR" class="popupText input" placeholder="Username">
-                            <span class="">Enter a password</span>
-                            <input type="password" id="passwordR" class="popupText input" placeholder="Password">
-                            <span class="">Confirm password</span>
-                            <input type="password" id="passwordRC" class="popupText input"
-                                placeholder="Confirm Password">
-                            <div>
-                                <input type="submit" id="registerSubmit" class="center input">
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-
-            <div id="NewLocation" class="overlay">
-                <div class="popup">
-                    <span class=title>Submit Location</span>
-                    <!-- Cloce button for popup -->
-                    <a class="close" href="#">&times;</a>
-                    <div class="information">
-                        <!-- Allows a user to submit a new item to the database  -->
-                        <form action="#NewLocation" method="POST" id="form3" class="center">
-                            <div>
-                                <label id="error_ListS"></label>
-                            </div>
-                            <span class="">Restraunt Name</span>
-                            <input type="text" id="RName" class="popupText input" placeholder="Restraunt">
-                            <span class="">Restraunt latitude</span>
-                            <input type="text" id="latitude" class="popupText input" placeholder="Latitude">
-                            <span class="">Restraunt longitude</span>
-                            <input type="text" id="longitude" class="popupText input" placeholder="Longitude">
-                            <button type="button" id="locateSub" class="input"></button>
-                            <span class="">Describe the Restraunt</span>
-                            <textarea id="Desc" class="popupText input left" rows=10 cols=10 wrap="soft"
-                                placeholder=""></textarea>
-                            <input type="file" name="picture" id="imageUpload" accept="image/*" class="input fullWidth">
-                            <div>
-                                <input type="submit" id="submitLoc" class="center input">
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+            <?php include 'php/inc/overlays.inc'?>
         </div>
 
         <!-- Footer provides additional links for users -->
-        <footer class="black">
-            <div class="head black">
-                <a href="" class="link"><span class="white headL">About us</span></a>
-                <a href="" class="link"><span class="white headL">Contact us</span></a>
-                <a href="" class="link"><span class="white headL">Help</span></a>
-            </div>
-
-        </footer>
+        
 
     </div>
 
