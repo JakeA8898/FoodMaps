@@ -20,172 +20,92 @@
 
         <!-- Results section relating to the side navigation bar -->
         <div class="results off-black">
-            <?php include 'php/inc/sidebar.inc' ?>
+            <!-- ?php include 'php/inc/sidebar.inc' ?> -->
 
             <div class="resultPage">
                 <div id="map"></div>
                 <!-- each resultbox is in its own div labelled result, which lays out the results -->
-                <div class="result">
-                    <div class="infoBox">
-                        <a class="flex-grid-thirds" href="singleResults.php">
-                            <table class="resultTable">
-                                <tr class="col">
-                                    <!-- header for the horizontal table labeling the name of the restaruant -->
-                                    <td>Name:</td>
-                                    <!-- table data labeling the actual name of the restaruant -->
-                                    <td>The Keg Steakhouse + Bar</td>
-                                    <!-- the rest of the table is formatted in this exact way -->
-                                </tr>
-                                <tr class="col">
-                                    <td>Address:</td>
-                                    <td>1170 Upper James St, Hamilton, ON L9C 3B1</td>
-                                </tr>
-                                <tr class="col">
-                                    <td>Hours of operation:</td>
-                                    <td>Monday-Sunday 4:00PM-11:00PM</td>
-                                </tr>
-                                <tr class="col">
-                                    <td>Rating:</td>
-                                    <td>4.5/5.0 Stars</td>
-                                </tr>
-                                <tr class="col">
-                                    <td>Cost:</td>
-                                    <td>$$$</td>
-                                </tr>
-                                <tr class="col">
-                                    <td>Phone Number:</td>
-                                    <td>(905) 574-7880</td>
-                                </tr>
+                <?php 
+                    $servername = "localhost";
+                    $username = "TestUser";
+                    $passowrd = "TestPassword123!";
+                    $dbname = "Foodmaps";
+                    
+                    $pdo = new PDO("mysql:host=$servername;dbname=$dbname",$username,$passowrd);
+                    $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+                    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                            </table>
-                        </a>
-                    </div>
-                    <!-- arranged in a flex box, these pictures aligns with the right side of the page and allows information to be placed to the left -->
-                    <div class="resultPicture">
-                        <img src="media/Keg_dining_room.jpg" alt="The Keg Dining Room" class="pic">
-                    </div>
-                </div>
+                    $costs = 4;
+                    $stars = 0;
+                    if(isset($_GET['lat']) && isset($_GET['lng'])){
+                        echo("<span class='hidden' id='userLAT'>{$_GET['lat']}</span>");
+                        echo("<span class='hidden' id='userLNG'>{$_GET['lng']}</span>");
+                        if(isset($_GET['costs'])){
+                            $costs = $_GET['costs'];
+                        }
+                        if(isset($_GET['stars'])){
+                            $stars = $_GET['stars'];
+                        }
+                        $sql = "SELECT * FROM locations WHERE COST < ? AND RATING > ?";
+                        $stmt = $pdo->prepare($sql);
+                        try{
+                            $stmt -> execute([$costs, $stars]);
+                        }catch (PDOException $e){
+                            echo $e ->getMessage();
+                        }
+                        while ($row = $stmt->fetch()){
+                            $goodDesc = str_replace("+", "", $row['DESCR']);
+                            $goodDesc = str_replace("'", "", $goodDesc);
+                            echo ("<div class='result'>
+                                <div class='infoBox'>
+                                    <a class='flex-grid-thirds' href='singleResults.php?id={$row['loc_ID']}'>
+                                        <table class='resultTable'>
+                                            <tr class='col'>
+                                                <!-- header for the horizontal table labeling the name of the restaruant -->
+                                                <td>Name:</td>
+                                                <!-- table data labeling the actual name of the restaruant -->
+                                                <td class='name_loc'>{$row['loc_NAME']}</td>
+                                                <!-- the rest of the table is formatted in this exact way -->
+                                            </tr>
+                                            <tr class='col'>
+                                                <td>Address:</td>
+                                                <td>{$row['loc_Address']}</td>
+                                            </tr>
+                                            <tr class='col'>
+                                                <td>Rating:</td>
+                                                <td>{$row['RATING']}/5.0 Stars</td>
+                                            </tr>
+                                            <tr class='col'>
+                                                <td>Cost:</td>
+                                                <td>{$row['COST']}/4 $</td>
+                                            </tr>
+                                            <tr class='col'>
+                                                <td>Phone Number:</td>
+                                                <td>{$row['PHONE']}</td>
+                                            </tr>
+                                            
 
-                <div class="result">
-                    <div class="infoBox">
-                        <a class="flex-grid-thirds" href="">
-                            <table class="resultTable">
-                                <tr class="col">
-                                    <!-- header for the horizontal table labeling the name of the restaruant -->
-                                    <td>Name:</td>
-                                    <!-- table data labeling the actual name of the restaruant -->
-                                    <td>Spring Sushi</td>
-                                    <!-- the rest of the table is formatted in this exact way -->
-                                </tr>
-                                <tr class="col">
-                                    <td>Address:</td>
-                                    <td>1508 Upper James St, Hamilton, ON L9B 1K3</td>
-                                </tr>
-                                <tr class="col">
-                                    <td>Hours of operation:</td>
-                                    <td>Monday-Sunday 11:00AM-10:30PM</td>
-                                </tr>
-                                <tr class="col">
-                                    <td>Rating:</td>
-                                    <td>4.0/5.0 Stars</td>
-                                </tr>
-                                <tr class="col">
-                                    <td>Cost:</td>
-                                    <td>$$</td>
-                                </tr>
+                                        </table>
+                                    </a>
+                                    <span class='descr hidden'>{$goodDesc}</span>
+                                    <span class='lat hidden'>{$row['LAT']}</span>
+                                    <span class='lng hidden'>{$row['LNG']}</span>
+                                    <span class='name hidden'>{$row['loc_NAME']}</span>
+                                    <span class='locID hidden'>{$row['loc_ID']}</span>
+                                    
+                                </div>
+                                <!-- arranged in a flex box, these pictures aligns with the right side of the page and allows information to be placed to the left -->
+                                <div class='resultPicture'>
+                                    <img src='media/Keg_dining_room.jpg' alt='The Keg Dining Room' class='pic'>
+                                </div>
+                            </div>");
+                        }
+                    }
+                    
+                    
 
-                                <tr class="col">
-                                    <td>Phone Number:</td>
-                                    <td>(905) 383-6866</td>
-                                </tr>
-                            </table>
-                        </a>
-                    </div>
-                    <!-- arranged in a flex box, these pictures aligns with the right side of the page and allows information to be placed to the left -->
-                    <div class="resultPicture">
-                        <img src="media/Spring_dining_room.jpg" alt="The Spring Sushi Dining Room" class="pic">
-                    </div>
-                </div>
-
-                <div class="result">
-                    <div class="infoBox">
-                        <a class="flex-grid-thirds" href="">
-                            <table class="resultTable">
-                                <tr class="col">
-                                    <!-- header for the horizontal table labeling the name of the restaruant -->
-                                    <td>Name:</td>
-                                    <!-- table data labeling the actual name of the restaruant -->
-                                    <td>Turtle Jack's Upper James</td>
-                                    <!-- the rest of the table is formatted in this exact way -->
-                                </tr>
-                                <tr class="col">
-                                    <td>Address:</td>
-                                    <td>1180 Upper James St, Hamilton, ON L9C 3B1</td>
-                                </tr>
-                                <tr class="col">
-                                    <td>Hours of operation:</td>
-                                    <td>Monday-Sunday 11:00AM-11:00PM</td>
-                                </tr>
-                                <tr class="col">
-                                    <td>Rating:</td>
-                                    <td>4.0/5.0 Stars</td>
-                                </tr>
-                                <tr class="col">
-                                    <td>Cost:</td>
-                                    <td>$$</td>
-                                </tr>
-                                <tr class="col">
-                                    <td>Phone Number:</td>
-                                    <td>(905) 389-6696</td>
-                                </tr>
-                            </table>
-                        </a>
-                    </div>
-                    <!-- arranged in a flex box, these pictures aligns with the right side of the page and allows information to be placed to the left -->
-                    <div class="resultPicture">
-                        <img src="media/Turtle_dining_room.jpg" alt="The Turtle Jacks Room" class="pic">
-                    </div>
-                </div>
-
-                <div class="result">
-                    <div class="infoBox">
-                        <a class="flex-grid-thirds" href="">
-                            <table class="resultTable">
-                                <tr class="col">
-                                    <!-- header for the horizontal table labeling the name of the restaruant -->
-                                    <td>Name:</td>
-                                    <!-- table data labeling the actual name of the restaruant -->
-                                    <td>Spring Grill House</td>
-                                    <!-- the rest of the table is formatted in this exact way -->
-                                </tr>
-                                <tr class="col">
-                                    <td>Address:</td>
-                                    <td>1441 Upper James St, Hamilton, ON L9B 1K2</td>
-                                </tr>
-                                <tr class="col">
-                                    <td>Hours of operation:</td>
-                                    <td>Monday-Sunday 12:00PM-11:00PM</td>
-                                </tr>
-                                <tr class="col">
-                                    <td>Rating:</td>
-                                    <td>4.5/5.0 Stars</td>
-                                </tr>
-                                <tr class="col">
-                                    <td>Cost:</td>
-                                    <td>$$</td>
-                                </tr>
-                                <tr class="col">
-                                    <td>Phone Number:</td>
-                                    <td>(905) 383-6868</td>
-                                </tr>
-                            </table>
-                        </a>
-                    </div>
-                    <!-- arranged in a flex box, these pictures aligns with the right side of the page and allows information to be placed to the left -->
-                    <div class="resultPicture">
-                        <img src="media/Grill_dining_room.jpg" alt="The Spring Grill Dining Room" class="pic">
-                    </div>
-                </div>
+                ?>
+                
 
             </div>
 

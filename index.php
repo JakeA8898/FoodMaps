@@ -16,7 +16,6 @@
 <body>
     <div class="main">
         <!-- header bar, including links leading to login popup, register opoup and submit a location popup -->
-        <?php 'php/inc/login.inc' ?>
         <?php include 'php/inc/header.inc' ?>
         <!-- The content contains all of the inputs on the page -->
         <div class="content off-black">
@@ -50,8 +49,10 @@
                         </div>
                         <!-- Has a text input for user to input area and a button to find exact location -->
                         <div class=location>
-                            <input type="text" id="locateText" class="input text" name="geoLocation"
-                                placeholder="Enter postal code or city">
+                            <input type="text" id="locateLat" class="input" name="lat"
+                                placeholder="Latitude">
+                            <input type="text" id="locateLng" class="input " name="lng"
+                                placeholder="Longitude">
                             <button type="button" id="locate" class="input"></button>
                         </div>
                         <div id=LocEntry class="white">
@@ -95,17 +96,17 @@
                 </div>
             </form>
 
-            <div class="spacing center">
+            <!-- <div class="spacing center">
                 <div class="instruction white">
                     <span>Know where you want to eat? Search for it below</span>
                 </div>
-                <!-- Allows a user to search for a specific restraunt -->
+                
                 <div class="spacing searchBar">
                     <input type="text" id="knownSearch" class="input text " placeholder="Enter where you want to eat">
                     <button id="buttonSearch" class="input">Find food</button>
                 </div>
 
-            </div>
+            </div> -->
             <!-- Next three divs(at this level) are for the three popup boxes. They are triggered by the buttons in the header -->
             <?php include 'php/inc/overlays.inc'?>
         </div>

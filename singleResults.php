@@ -19,140 +19,174 @@
         <?php include 'php/inc/header.inc' ?>
         <!-- Results section relating to the side navigation bar -->
         <div class="results off-black">
-        <?php include 'php/inc/sidebar.inc' ?>
+        <!-- ?php include 'php/inc/sidebar.inc' ?> -->
 
             <div class="resultPage">
 
                 <div id='map'></div>
 
                 <!-- each resultbox is in its own div labelled result, which lays out the results -->
-                <div class="result">
-                    <div class="infoBox">
-                        <div class="flex-grid-thirds">
-                            <table class="restaurantInfo">
-                                <!-- header for the vertical table labeling the information about the restaruant -->
-                                <tr class="col">
-                                    <th class="enlarge">About the Keg Steakhouse + Bar</th>
-                                </tr>
-                                <!-- the table data address in groups containing information of restaurant -->
-                                <tr class="col">
-                                    <td>Address: 1170 Upper James St, Hamilton, ON L9C 3B1 | Hours of operation:
-                                        Monday-Sunday 4:00PM-11:00PM | Rating: 4.5/5.0 Stars | Cost: $$$ | Phone Number:
-                                        (905)
-                                        574-7880</td>
-                                </tr>
-                                <!-- next bit of table data labels the description of the restaruant -->
-                                <tr class="col">
-                                    <td>The Keg Steakhouse + Bar serves the finest cuts of succulent steak, aged for
-                                        tenderness and grilled to perfection. Prime rib is a Keg specialty, slow
-                                        roasted, hand carved and perfectly seasoned with special Keg spices. The
-                                        restaurant also serves delicious seafood, memorable appetizers, crisp salads and
-                                        decadent desserts</td>
-                                </tr>
-                                <!-- split into paragraphs for a cleaner design aspect -->
-                                <tr class="col">
-                                    <td>A casual ambiance and friendly, very knowledgeable staff are proud and reliable
-                                        trademarks of The Keg Steakhouse + Bar. You'll find a truly comfortable and
-                                        satisfying dining atmosphere accompanied by a fun and up-scale bar setting where
-                                        guests can enjoy an excellent wine list, signature Keg martinis, and fresh
-                                        squeezed juice cocktails.</td>
-                                </tr>
-                            </table>
+                <?php
+                    $servername = "localhost";
+                    $username = "TestUser";
+                    $passowrd = "TestPassword123!";
+                    $dbname = "Foodmaps";
+                    
+                    $pdo = new PDO("mysql:host=$servername;dbname=$dbname",$username,$passowrd);
+                    $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+                    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+                    if(isset($_GET['id'])){
+                        
+                        $sql = "SELECT * FROM locations WHERE loc_ID = ?";
+                        $stmt = $pdo->prepare($sql);
+                        try{
+                            $stmt -> execute([$_GET['id']]);
+                        }catch (PDOException $e){
+                            echo $e ->getMessage();
+                        }
+
+                        $rows = $stmt->fetchAll();
+                        
+                        if(count($rows) == 1){
+                            $goodDesc = str_replace("+", "", $rows[0]['DESCR']);
+                            $goodDesc = str_replace("'", "", $goodDesc);
+                            echo("<span class='hidden' id='userLAT'>{$rows[0]['LAT']}</span>");
+                            echo("<span class='hidden' id='userLNG'>{$rows[0]['LNG']}</span>");
+                            echo ("<div class='result'>
+                                        <div class='infoBox'>
+                                            <div class='flex-grid-thirds'>
+                                                <table class='restaurantInfo'>
+                                                    <!-- header for the vertical table labeling the information about the restaruant -->
+                                                    <tr class='col'>
+                                                        <th class='enlarge'>About {$rows[0]['loc_NAME']}</th>
+                                                    </tr>
+                                                    <!-- the table data address in groups containing information of restaurant -->
+                                                    <tr class='col'>
+                                                        <td>Address: {$rows[0]['loc_Address']} |  Rating: {$rows[0]['RATING']}/5 Stars | Cost: {$rows[0]['COST']}/4 $ | Phone Number:
+                                                            {$rows[0]['PHONE']}</td>
+                                                    </tr>
+                                                    <!-- next bit of table data labels the description of the restaruant -->
+                                                    <tr class='col'>
+                                                        <td>{$goodDesc}</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <span class='descr hidden'>{$rows[0]['DESCR']}</span>
+                                        <span class='lat hidden'>{$rows[0]['LAT']}</span>
+                                        <span class='lng hidden'>{$rows[0]['LNG']}</span>
+                                        <span class='name hidden'>{$rows[0]['loc_NAME']}</span>
+                                        <span class='locID hidden'>{$rows[0]['loc_ID']}</span>
+                                        <!-- arranged in a flex box, this picture aligns with the right side of the page and allows information to be placed to the left -->
+                                        <div class='resultPicture'>
+                                            <img src='media/Keg_dining_room.jpg' alt='The Keg location' class='pic'>
+                                        </div>
+                                    </div>");
+                        
+                        }else{
+                            echo("{$_GET['id']}");
+                        } 
+                    }
+                ?>
+                
+                <?php   
+                    if(isset($_SESSION['ID'])){
+                        echo("<div class='result'>
+                        <div class='infoBox'>
+    
+                            <!-- organized in a table to allow for easier entries and better design aspect -->
+                            <div class='flex-grid-thirds'>
+                                <form action='php/submitReview.php' id='reviewForm' method='POST' class='restaurantInfo'>
+                                    <!-- vertical table header -->
+                                    <div class='col review'>
+                                        <span class='enlarge'>Enter a review here</span> 
+                                    </div>
+                                    <div class='col'>
+                                        <textarea class='reviewtext' id='review' name='reviewText' rows='10'  placeholder='Enter review here'></textarea>
+                                    </div>
+                                    <div class='radioSelector raiting'>
+                                        <!-- The labels allow for special symbols forthe radio boxes  -->
+                                        <input type='radio' name='stars' id=starR5 value='5'><label for='starR5'></label>
+                                        <input type='radio' name='stars' id=starR4 value='4'><label for='starR4'></label>
+                                        <input type='radio' name='stars' id=starR3 value='3'><label for='starR3'></label>
+                                        <input type='radio' name='stars' id=starR2 value='2'><label for='starR2'></label>
+                                        <input type='radio' name='stars' id=starR1 value='1' checked><label for='starR1'></label>
+                                    </div>
+                                    <input type='text' class='hidden' name='location' value={$_GET['id']}>
+
+    
+                                    <div class='review'>
+                                        <input type='submit' id='submitReview' class='center input'>
+                                    </div>
+    
+                                </form>
+                            </div>
                         </div>
-                    </div>
-                    <!-- arranged in a flex box, this picture aligns with the right side of the page and allows information to be placed to the left -->
-                    <div class="resultPicture">
-                        <img src="media/Keg_dining_room.jpg" alt="The Keg location" class="pic">
-                    </div>
-                </div>
+                    </div>");
+                    }
+                ?>
+
+                
+                <?php
+
+                    $servername = "localhost";
+                    $username = "TestUser";
+                    $passowrd = "TestPassword123!";
+                    $dbname = "Foodmaps";
+
+                    $pdo = new PDO("mysql:host=$servername;dbname=$dbname",$username,$passowrd);
+                    $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+                    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+                    
+                        
+                        $sql = "SELECT * FROM reviews WHERE loc_ID = ?";
+                        $stmt = $pdo->prepare($sql);
+                        try{
+                            $stmt -> execute([$_GET['id']]);
+                        }catch (PDOException $e){
+                            echo $e ->getMessage();
+                        }
+
+                        
+                        
+
+                        while($row = $stmt -> fetch()){
+                            $sql = "SELECT USERNAME FROM users WHERE ID=?";
+                            $stmt2 = $pdo->prepare($sql);
+                            try{
+                                $stmt2 -> execute([$row['UserID']]);
+                            }catch (PDOException $e){
+                                echo $e ->getMessage();
+                            }
+                            $uid = $stmt2->fetch();
+                            echo("<div class='result'>
+                            <div class='infoBox'>
+        
+                                <!-- organized in a table to allow for easier entries and better design aspect -->
+                                <div class='flex-grid-thirds'>
+                                    <table class='restaurantInfo'>
+                                        <!-- vertical table header -->
+                                        <tr class='col'>
+                                            <th class='enlarge'>Review by: {$uid['USERNAME']} - {$row['RATING']}/5</th>
+                                        </tr>
+                                        <!-- review information left by customer -->
+                                        <tr class='col'>
+                                            <td>{$row['REVIEW']}</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>");
+                        }
+
+
+                ?>
+                
 
                 <!-- next sections are all seperate info boxes for each review -->
-                <div class="result">
-                    <div class="infoBox">
-
-                        <!-- organized in a table to allow for easier entries and better design aspect -->
-                        <div class="flex-grid-thirds">
-                            <table class="restaurantInfo">
-                                <!-- vertical table header -->
-                                <tr class="col">
-                                    <th class="enlarge">Review by: JohnD - 5.0/5.0</th>
-                                </tr>
-                                <!-- review information left by customer -->
-                                <tr class="col">
-                                    <td>Excellent food, service, and ambience. Servers are very attentive and food
-                                        arrives quickly.</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- seperate info boxes for each review -->
-                <div class="result">
-                    <div class="infoBox">
-                        <div class="flex-grid-thirds">
-                            <table class="restaurantInfo">
-                                <!-- vertical table header -->
-                                <tr class="col">
-                                    <th class="enlarge">Review by: Carly - 4.0/5.0</th>
-                                </tr>
-                                <!-- review information left by customer -->
-                                <tr class="col">
-                                    <td>The food was delicious and came out in a timely manner. We really appreciated
-                                        that the service wasn't overbearing - we are the type of people that come to The
-                                        Keg for a romantic dinner, so it ruins the mood if a server is asking if
-                                        everything's okay every 10 minutes. So we were very pleased that wasn't the case
-                                        in this instance, our server was excellent and gave us our privacy while also
-                                        being efficient at her job. If I *had* to be nit-picky, we had made our
-                                        reservation on September 7 (almost a month in advance), but our table was tucked
-                                        in a corner beside the wall. It would have been nice to have been seated closer
-                                        to the fireplace, but again, that's just me being nit-picky. Thanks again for a
-                                        lovely anniversary dinner! :)</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- seperate info boxes for each review -->
-                <div class="result">
-                    <div class="infoBox">
-                        <div class="flex-grid-thirds">
-                            <table class="restaurantInfo">
-                                <!-- vertical table header -->
-                                <tr class="col">
-                                    <th class="enlarge">Review by: MorganP - 4.0/5.0</th>
-                                </tr>
-                                <!-- review information left by customer -->
-                                <tr class="col">
-                                    <td>The Keg is always Consistent...very Good, in every way - that is why we enjoy it
-                                        and keep coming back !!</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- seperate info boxes for each review -->
-                <div class="result">
-                    <div class="infoBox">
-                        <div class="flex-grid-thirds">
-                            <table class="restaurantInfo">
-                                <!-- vertical table header -->
-                                <tr class="col">
-                                    <th class="enlarge">Review by: VictorWho - 4.0/5.0</th>
-                                </tr>
-                                <!-- review information left by customer -->
-                                <tr class="col">
-                                    <td>Food and service was excellent. Had to wait 40 mins after appetizers for main
-                                        course. Table of 6 youths beside us were pretty load throughout the course of my
-                                        meal.
-                                        Also noticed price increases.</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
+                
 
             </div>
 
@@ -162,9 +196,10 @@
         <?php include 'php/inc/overlays.inc'?>
         
     </div>
-
+                        
     <!-- Footer which includes links to an about us, contact us and help page -->
-    <?php include 'php/inc/footer.inc' ?>
+    <footer>
+        <?php include 'php/inc/footer.inc' ?>
 
     </footer>
     </div>

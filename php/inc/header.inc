@@ -10,7 +10,7 @@
                 // echo "<form action='php/logout.php' class='link'><button type='submit' name='logout' class='white headL'>Logout</button></form>";
             }else{
                 echo "<a href='#login' class='link'><span class='white headL'>Login</span></a>";
-            // <a href="#register" class="link"><span class="white headL">Register</span></a>
+                echo "<a href='#register' class='link'><span class='white headL'>Register</span></a>";
             
         }
         ?>

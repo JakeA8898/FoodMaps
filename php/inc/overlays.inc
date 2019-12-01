@@ -51,26 +51,33 @@
             </div>
 
 
-            <div id="NewLocation" class="overlay">
+<div id="NewLocation" class="overlay">
                 <div class="popup">
                     <span class=title>Submit Location</span>
                     <!-- Cloce button for popup -->
                     <a class="close" href="#">&times;</a>
                     <div class="information">
                         <!-- Allows a user to submit a new item to the database  -->
-                        <form action="#NewLocation" method="POST" id="form3" class="center">
+                        <form action="php/submit.php" method="POST" id="form3" class="center">
                             <div>
                                 <label id="error_ListS"></label>
                             </div>
                             <span class="">Restraunt Name</span>
-                            <input type="text" id="RName" class="popupText input" placeholder="Restraunt">
+                            <input type="text" id="RName" name="RName" class="popupText input" placeholder="Restraunt">
+                            <span class="">Phone Number</span>
+                            <input type="text" id="RPhone" name="RPhone" class="popupText input" placeholder="Phone Number">
+                            <span class="">Address</span>
+                            <input type="text" id="RAddress" name="RAddress" class="popupText input" placeholder="Address">
+                            <span class="">Cost and Ratings</span>
+                            <input type="text" id="RCost" name="RCost" class="popupText input" placeholder="Cost">
+                            <input type="text" id="RRating" name="RRating" class="popupText input" placeholder="Stars">
                             <span class="">Restraunt latitude</span>
-                            <input type="text" id="latitude" class="popupText input" placeholder="Latitude">
+                            <input type="text" id="latitude" name="latitude" class="popupText input" placeholder="Latitude">
                             <span class="">Restraunt longitude</span>
-                            <input type="text" id="longitude" class="popupText input" placeholder="Longitude">
+                            <input type="text" id="longitude" name="longitude" class="popupText input" placeholder="Longitude">
                             <button type="button" id="locateSub" class="input"></button>
                             <span class="">Describe the Restraunt</span>
-                            <textarea id="Desc" class="popupText input left" rows=10 cols=10 wrap="soft"
+                            <textarea id="Desc" name="Desc" class="popupText input left" rows=10 cols=10 wrap="soft"
                                 placeholder=""></textarea>
                             <input type="file" name="picture" id="imageUpload" accept="image/*" class="input fullWidth">
                             <div>

@@ -5,6 +5,8 @@ const findFood = document.getElementById("buttonSearch")
 const locate2 = document.getElementById("locateSub")
 const subLat = document.getElementById("latitude")
 const subLng = document.getElementById("longitude")
+const latBox = document.getElementById("locateLat")
+const lngBox = document.getElementById("locateLng")
 
 //This is for the submission fourm location
 function addLocation(){
@@ -32,14 +34,16 @@ function getLocation() {
 }
 
 function accessLocation(pos){
-    var lat = document.createTextNode("Latitude: "+pos.coords.latitude);
-    var long = document.createTextNode("Longitude: "+pos.coords.longitude);
-    locationDiv.innerHTML="";
-    locationDiv.appendChild(lat);
-    locationDiv.appendChild(document.createElement("br"));
-    locationDiv.appendChild(long);
+    // var lat = document.createTextNode("Latitude: "+pos.coords.latitude);
+    // var long = document.createTextNode("Longitude: "+pos.coords.longitude);
+    latBox.value = pos.coords.latitude;
+    lngBox.value = pos.coords.longitude;
+    // locationDiv.innerHTML="";
+    // locationDiv.appendChild(lat);
+    // locationDiv.appendChild(document.createElement("br"));
+    // locationDiv.appendChild(long);
 }
 
 locate.addEventListener("click", getLocation);
-findFood.addEventListener("click",getLocation);
+// findFood.addEventListener("click",getLocation);
 locate2.addEventListener("click", addLocation)

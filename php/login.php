@@ -1,6 +1,6 @@
 <?php
 
-// session_set_cookie_params(300,"/");
+
 session_start();
 
 $servername = "localhost";

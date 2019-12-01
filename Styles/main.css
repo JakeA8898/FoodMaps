@@ -78,6 +78,10 @@ footer{
     background: rgb(35, 47, 63);
 }
 
+.gray{
+    color: gray;
+}
+
 /* White text color  */
 .white{
     color: azure;
@@ -113,6 +117,14 @@ footer{
     visibility: hidden;
     opacity: 0;
     z-index: 99;
+    /* max-height: 90vh;
+    overflow: scroll; */
+}
+
+.hidden{
+    opacity: 0;
+    visibility: 0;
+    display: none;
 }
 
 /* For when the overlays is targeted  */
@@ -124,7 +136,7 @@ footer{
 
 /* The design for the popup windows */
 .popup{
-    margin: 15vh auto;
+    margin: 5vh auto;
     padding: 20px;
     background: #fff;
     border-radius: 5px;
@@ -177,6 +189,14 @@ footer{
 /* placeholder text size in the popup  */
 .popupText::placeholder{
     font-size: 0.8em;
+}
+
+.reviewtext{
+    width: 95%;
+    margin-left: 1.6vw;
+}
+.review{
+    text-align: center;
 }
 
 /* class to slign the objects in the selector div  */
@@ -296,7 +316,7 @@ footer{
     position: relative;
     display: block;
     font-size: 2rem;
-    color: azure;
+    color: rgb(129, 131, 131);
 
 }
 /* sets the style after the label is clicked  */
@@ -387,7 +407,7 @@ footer{
 .resultPage{
     display:flex;
     flex-direction: column;
-    width: 80vw;
+    width: 100%;
     height: auto;
     overflow-y: auto;
     overflow-x:hidden;
@@ -473,10 +493,11 @@ footer{
 }
 
 #map{
-    position: absolute;
+    position: relative;
     height: 450px;
-    width: 100%;
+    width: 100vh;
     z-index: 10;
+    
 }
 
 
