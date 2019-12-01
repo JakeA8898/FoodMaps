@@ -183,12 +183,12 @@ function validatePostal(){
 // Validating image upload requirements
 function validateImage(){
     var file_extension = image.value.split('.').pop().toLowerCase();
-    var isValid = true;
+    var isValid = false;
     for(var i = 0; i <= allowed_extensions.length; i++)
     {
-        if (!(allowed_extensions[i]==file_extension))
+        if ((allowed_extensions[i]==file_extension))
         {
-            isValid = false;
+            isValid = true;
         }
     }
     if (!isValid)
