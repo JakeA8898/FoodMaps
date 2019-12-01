@@ -12,6 +12,7 @@ var usrLat = parseFloat(document.getElementById("userLAT").innerHTML);
 var usrLng = parseFloat(document.getElementById("userLNG").innerHTML);
 
 
+
 //This data will be pulled from the database, for now it is hardcoded in.
 // var markers = [
 //     ["The Keg Steakhouse + Bar", 43.218760, -79.887384,'<div id="content">' +
@@ -50,6 +51,14 @@ function initMapSmall(){
 }
 //This function pulls up the map for the regular result page
 function initMapLarge() {
+    // var descs = document.getElementsByClassName("descr");
+    // var lats = document.getElementsByClassName("lat");
+    // var lngs = document.getElementsByClassName("lng");
+    // var names = document.getElementsByClassName("name");
+    // var ids = document.getElementsByClassName("locID");
+    // var usrLat = parseFloat(document.getElementById("userLAT").innerHTML);
+    // var usrLng = parseFloat(document.getElementById("userLNG").innerHTML);
+    console.log(usrLat);
     infowindow = new google.maps.InfoWindow();
     map = new google.maps.Map(document.getElementById('map'), {
         center: { lat: usrLat, lng: usrLng },
@@ -57,8 +66,10 @@ function initMapLarge() {
     });
     //This adds each item in the list above to the database
     for (var i = 0; i < ids.length; i++) {
+        console.log(lats[i].innerHTML);
         var marker = new google.maps.Marker({
-            position: { lat: (parseFloat(lats[i].innerHTML)), lng: (parseFloat(lngs[i].value)) },
+            
+            position: { lat: parseFloat(lats[i].innerHTML), lng: parseFloat(lngs[i].innerHTML) },
             title: names[i].innerHTML,
             label: labels[i],
             zIndex: ids.length - i,
@@ -80,7 +91,17 @@ function initMapLarge() {
         //Adds a listiner to each marker that brings up a description
         marker.addListener('click', (function(marker,i) {
             return function() {
-                infowindow.setContent(markers[i][3]);
+                infowindow.setContent('<div id="content">' +
+                '<div id="siteNotice">' +
+                '</div>' +
+                '<h1 id="firstHeading" class="firstHeading">' + names[i].innerHTML + '</h1>' +
+                '<div id="bodyContent">' +
+                '<p>'+ descs[i].innerHTML +'</p>' +
+                '<p> <a href="singleResults.php?id='+ids[i].innerHTML+'">' +
+                'Click here for more information</a> ' +
+                '</p>' +
+                '</div>' +
+                '</div>');
                 infowindow.open(map,marker);
             };
         })(marker,i));
