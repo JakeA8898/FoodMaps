@@ -46,7 +46,11 @@
                         if(isset($_GET['stars'])){
                             $stars = $_GET['stars'];
                         }
-                        $sql = "SELECT * FROM locations WHERE COST < ? AND RATING > ?";
+                        $upperLat = ((int)$_GET['lat']) + 5;
+                        $lowerLat = ((int)$_GET['lat']) - 5;
+                        $upperLng = ((int)$_GET['lng']) + 5;
+                        $lowerLng = ((int)$_GET['lng']) - 5;
+                        $sql = "SELECT * FROM locations WHERE COST < ? AND RATING > ? AND (LAT < {$upperLat} AND LAT > {$lowerLat}) AND (LNG < {$upperLng} AND LNG > {$lowerLng})";
                         $stmt = $pdo->prepare($sql);
                         try{
                             $stmt -> execute([$costs, $stars]);
@@ -96,7 +100,7 @@
                                 </div>
                                 <!-- arranged in a flex box, these pictures aligns with the right side of the page and allows information to be placed to the left -->
                                 <div class='resultPicture'>
-                                    <img src='media/Keg_dining_room.jpg' alt='The Keg Dining Room' class='pic'>
+                                    <img src='Media/{$row['RIMAGE']}' alt='Unable to load Image' class='pic'>
                                 </div>
                             </div>");
                         }
@@ -120,7 +124,7 @@
     </div>
     <script type="text/javascript" src="Scripts/script.js"></script>
     <script type="text/javascript" src="Scripts/maps.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?APIKEYHERE&callback=initMapLarge">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBX-I1xmNBFJNXjbC4-uoH_LddM_3whiUY&callback=initMapLarge">
     </script>
 </body>
 

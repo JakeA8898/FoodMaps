@@ -15,6 +15,7 @@
 
 <body>
     <div class="main">
+        
         <!-- header bar, including links leading to login popup, register opoup and submit a location popup -->
         <?php include 'php/inc/header.inc' ?>
         <!-- The content contains all of the inputs on the page -->
@@ -39,6 +40,25 @@
                         </div>
 
                     </div>
+
+
+                    <div class="center option">
+                        <!-- Instruction for user -->
+                        <div class="description">
+                            <span class="instruction white">Show me restraunts with a rating above or equal to:</span>
+                        </div>
+                        <!-- Radio selectors for stars, placed in reverse order for css purposes -->
+                        <div class="radioSelector raiting">
+                            <!-- The labels allow for special symbols forthe radio boxes  -->
+                            <input type="radio" name="stars" id=star5 value="5"><label for="star5"></label>
+                            <input type="radio" name="stars" id=star4 value="4"><label for="star4"></label>
+                            <input type="radio" name="stars" id=star3 value="3"><label for="star3"></label>
+                            <input type="radio" name="stars" id=star2 value="2"><label for="star2"></label>
+                            <input type="radio" name="stars" id=star1 value="1"><label for="star1"></label>
+                        </div>
+                    </div>
+
+
                     <div class="center option">
                         <div>
                             <label id="error_ListP" class="white"></label>
@@ -59,33 +79,8 @@
 
                         </div>
                     </div>
-                    <div class="type center option">
-                        <!-- Gives user instruction -->
-                        <div class="description">
-                            <span class="instruction white">I want to eat:</span>
-                            <span class="instruction white">(Fast food, Sit Down, Italian..)</span>
-                        </div>
-                        <!-- Text box for user to input their querry -->
-                        <div class="type">
-                            <input type="text" id="restrauntType" class="input text" name="TypeOfFood">
-                        </div>
-
-                    </div>
-                    <div class="center option">
-                        <!-- Instruction for user -->
-                        <div class="description">
-                            <span class="instruction white">Show me restraunts with a rating above or equal to:</span>
-                        </div>
-                        <!-- Radio selectors for stars, placed in reverse order for css purposes -->
-                        <div class="radioSelector raiting">
-                            <!-- The labels allow for special symbols forthe radio boxes  -->
-                            <input type="radio" name="stars" id=star5 value="5"><label for="star5"></label>
-                            <input type="radio" name="stars" id=star4 value="4"><label for="star4"></label>
-                            <input type="radio" name="stars" id=star3 value="3"><label for="star3"></label>
-                            <input type="radio" name="stars" id=star2 value="2"><label for="star2"></label>
-                            <input type="radio" name="stars" id=star1 value="1"><label for="star1"></label>
-                        </div>
-                    </div>
+                    
+                    
 
                 </div>
                 <!-- This is the search button that takes the users information and submits the form -->

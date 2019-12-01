@@ -80,7 +80,7 @@
                                         <span class='locID hidden'>{$rows[0]['loc_ID']}</span>
                                         <!-- arranged in a flex box, this picture aligns with the right side of the page and allows information to be placed to the left -->
                                         <div class='resultPicture'>
-                                            <img src='media/Keg_dining_room.jpg' alt='The Keg location' class='pic'>
+                                            <img src='media/{$rows[0]['RIMAGE']}' alt='Unable to load' class='pic'>
                                         </div>
                                     </div>");
                         
@@ -205,7 +205,7 @@
     </div>
     <script type="text/javascript" src="Scripts/script.js"></script>
     <script type="text/javascript" src="Scripts/maps.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=APIKEYHERE&callback=initMapSmall">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBX-I1xmNBFJNXjbC4-uoH_LddM_3whiUY&callback=initMapSmall">
     </script>
 </body>
 
