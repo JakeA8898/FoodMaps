@@ -205,7 +205,7 @@
     </div>
     <script type="text/javascript" src="Scripts/script.js"></script>
     <script type="text/javascript" src="Scripts/maps.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBX-I1xmNBFJNXjbC4-uoH_LddM_3whiUY&callback=initMapSmall">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=APIKEYHERE&callback=initMapSmall">
     </script>
 </body>
 

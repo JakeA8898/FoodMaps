@@ -120,7 +120,7 @@
     </div>
     <script type="text/javascript" src="Scripts/script.js"></script>
     <script type="text/javascript" src="Scripts/maps.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBX-I1xmNBFJNXjbC4-uoH_LddM_3whiUY&callback=initMapLarge">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?APIKEYHERE&callback=initMapLarge">
     </script>
 </body>
 
