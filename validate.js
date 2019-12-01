@@ -13,6 +13,8 @@ const errorOut2 = document.getElementById('error_ListR');
 
 const form3 = document.getElementById('form3');
 const name3 = document.getElementById('RName');
+const phone3 = document.getElementById('RPhone');
+const address3 = document.getElementById('RAddress');
 const latitude = document.getElementById('latitude');
 const longitude = document.getElementById('longitude');
 const description = document.getElementById('Desc');
@@ -22,6 +24,9 @@ const form4 = document.getElementById('form4');
 const postal = document.getElementById('locateText');
 const search = document.getElementById('search');
 const errorOut4 = document.getElementById('error_ListP');
+
+const latitude2 = document.getElementById('locateLat');
+const longitude2 = document.getElementById('locateLng');
 
 const image = document.getElementById('imageUpload');
 
@@ -67,6 +72,7 @@ if(form3){
     form3.addEventListener('submit', (e) => {
     //  Check if values are empty, if the email is correct and if the password meets requirements
         validateEmptyS();
+        validatePhone();
         validateLat();
         validateLong();
         validateImage();
@@ -80,8 +86,9 @@ if(form3){
 
 if(form4){
     form4.addEventListener('submit', (e) => {
-    //  Check if values are empty, if the email is correct and if the password meets requirements
-        //validatePostal();
+    //  Check if values are empty
+        validateLat2();
+        validateLong2();
         if (errors.length > 0){
             e.preventDefault();
             errorOut4.innerText = errors.join(', ');
@@ -117,6 +124,12 @@ function validateEmptyR(){
 function validateEmptyS(){
     if (name3.value === '' || name3.value == null){
         errors.push('Name field is Empty');
+    }
+    if (phone3.value === '' || phone3.value == null){
+        errors.push('Phone field is Empty');
+    }
+    if (address3.value === '' || address3.value == null){
+        errors.push('Address field is Empty');
     }
     if (latitude.value === '' || latitude.value == null){
         errors.push('Latitude field is Empty');
@@ -172,12 +185,29 @@ function validateLong(){
         errors.push('Longitude Invalid');
     }
 }
+// Validating lat requirements
+function validateLat2(){
+    if (!(latitude2.value.match(numbers))){
+        errors.push('Latitude Invalid');
+    }
+}
+// Validating long requirements
+function validateLong2(){
+    if (!(longitude2.value.match(numbers))){
+        errors.push('Longitude Invalid');
+    }
+}
 // Validating postal requirements
 function validatePostal(){
     if (!((postal.value.match(UpperCaseChars) 
     || (postal.value.match(LowerCaseChars))
     && postal.value.match(numbers)))){
         errors.push('Postal Code Invalid');
+    }
+}
+function validatePhone(){
+    if (!(phone3.value.match(numbers))){
+        errors.push('Phone Number Invalid');
     }
 }
 // Validating image upload requirements
