@@ -58,7 +58,7 @@
                     <a class="close" href="#">&times;</a>
                     <div class="information">
                         <!-- Allows a user to submit a new item to the database  -->
-                        <form action="php/submit.php" method="POST" id="form3" class="center">
+                        <form action="php/submit.php" method="POST" id="form3" class="center" enctype="multipart/form-data">
                             <div>
                                 <label id="error_ListS"></label>
                             </div>
