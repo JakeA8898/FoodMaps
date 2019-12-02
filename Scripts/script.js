@@ -1,5 +1,5 @@
 //conatants of items pulled from the page
-const locate = document.getElementById("locate");
+
 const locationDiv = document.getElementById("LocEntry")
 const findFood = document.getElementById("buttonSearch")
 const locate2 = document.getElementById("locateSub")
@@ -7,6 +7,7 @@ const subLat = document.getElementById("latitude")
 const subLng = document.getElementById("longitude")
 const latBox = document.getElementById("locateLat")
 const lngBox = document.getElementById("locateLng")
+const locate = document.getElementById("locate");
 
 //This is for the submission fourm location
 function addLocation(){
@@ -44,6 +45,7 @@ function accessLocation(pos){
     // locationDiv.appendChild(long);
 }
 
-locate.addEventListener("click", getLocation);
+
 // findFood.addEventListener("click",getLocation);
 locate2.addEventListener("click", addLocation)
+locate.addEventListener("click", getLocation);
